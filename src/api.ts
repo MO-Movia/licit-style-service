@@ -19,7 +19,7 @@ export default function api(styles: Styles): Router {
   //    Location: /styles/my-style
   route.post('/', (req: Request<Style>, res: Response) => {
     const key = styles.set(req.body);
-    return res.location(`/${key}`).sendStatus(201);
+    return res.location(`${req.baseUrl}/${key}`).sendStatus(201);
   });
 
   // GET /styles
