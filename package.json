@@ -2,9 +2,9 @@
   "name": "@modusoperandi/licit-style-service",
   "version": "1.0.0",
   "description": "reference REST endpoint for providing styles to licit editor",
-  "main": "lib/index.js",
+  "main": "lib/app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "nyc mocha",
     "build": "tsc -p tsconfig.json",
     "format": "prettier src --write",
     "start": "npm run build && DATA_ROOT=. node .",
@@ -19,8 +19,18 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
+    "@istanbuljs/nyc-config-typescript": "^1.0.1",
+    "@types/chai": "^4.2.14",
+    "@types/mocha": "^8.2.0",
     "@types/node": "^14.14.22",
+    "@types/sinon": "^9.0.10",
+    "chai": "^4.2.0",
+    "mocha": "^8.2.1",
+    "nyc": "^15.1.0",
     "prettier": "^2.2.1",
+    "rimraf": "^3.0.2",
+    "source-map-support": "^0.5.19",
+    "supertest": "^6.1.3",
     "ts-node": "^9.1.1",
     "typescript": "^4.1.3"
   },
@@ -28,6 +38,34 @@
     "body-parser": "^1.19.0",
     "compression": "^1.7.4",
     "cors": "^2.8.5",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "sinon": "^9.2.4"
+  },
+  "mocha": {
+    "require": [
+      "ts-node/register",
+      "source-map-support/register"
+    ],
+    "reporter": "spec",
+    "spec": [
+      "src/**/*.test.ts"
+    ],
+    "watch-files": [
+      "src/**/*.ts"
+    ]
+  },
+  "nyc": {
+    "extends": "@istanbuljs/nyc-config-typescript",
+    "all": true,
+    "include": [
+      "src/**/*.ts"
+    ],
+    "reporter": [
+      "text",
+      "html"
+    ]
+  },
+  "prettier": {
+    "singleQuote": true
   }
 }

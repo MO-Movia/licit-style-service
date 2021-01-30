@@ -1,14 +1,18 @@
 import { Request, Response, Router } from 'express';
 import type { Styles } from './styles';
 import type { Style } from './style';
+import bodyParser from 'body-parser';
 
 export default function api(styles: Styles): Router {
   const route = Router();
 
+  // Methods below require json body
+  route.use(bodyParser.json());
+
   // POST /styles
   // REQUEST BODY = (Style instance)
   // {
-  //   "stylename": "my-style",
+  //   "styleName": "my-style",
   //   ...
   // }
   //
@@ -19,7 +23,12 @@ export default function api(styles: Styles): Router {
   //    Location: /styles/my-style
   route.post('/', (req: Request<Style>, res: Response) => {
     const key = styles.set(req.body);
-    return res.location(`${req.baseUrl}/${key}`).sendStatus(201);
+    const location = `${req.baseUrl}/${key}`;
+    return res.location(location).status(201).json({
+      statusCode: 201,
+      message: 'Created',
+      location,
+    });
   });
 
   // GET /styles
@@ -31,7 +40,7 @@ export default function api(styles: Styles): Router {
   // RESPONSE BODY: (array of zero or more Style instances)
   // [
   //    {
-  //       "stylename": "my style",
+  //       "styleName": "my style",
   ///      ...
   ///   },
   //    ...
@@ -40,7 +49,7 @@ export default function api(styles: Styles): Router {
     res.json(styles.list());
   });
 
-  // GET /styles/:stylename
+  // GET /styles/:styleName
   // REQUEST BODY = none
   //
   // Gets individual style from the server.
@@ -48,31 +57,31 @@ export default function api(styles: Styles): Router {
   // STATUS CODE: 200 OK
   // RESPONSE BODY = (Style instance)
   // {
-  //    "stylename": "stylename",
+  //    "styleName": "styleName",
   //    ...
   // }
   //
   // STATUS CODE: 404 NOT FOUND
   // RESPONSE BODY = none
-  route.get('/:stylename', (req, res: Response<Style>, next) => {
-    const style = styles.get(req.params.stylename);
+  route.get('/:styleName', (req, res: Response<Style>, next) => {
+    const style = styles.get(req.params.styleName);
     if (style) {
       return res.json(style);
     }
     next();
   });
 
-  // DELETE /styles/:stylename
+  // DELETE /styles/:styleName
   // REQUEST BODY = none
   //
   // Deletes an existing style instance from the server.
   //
   // STATUS CODE: 204 No Content
   // RESPONSE BODY = none
-  route.delete('/:stylename', (req, res: Response) => {
+  route.delete('/:styleName', (req, res: Response) => {
     // Intentionally not failing if style does not exist.
     // Not Found here is not a failure.
-    styles.delete(req.params.stylename);
+    styles.delete(req.params.styleName);
     return res.sendStatus(204);
   });
 
@@ -101,7 +110,7 @@ export default function api(styles: Styles): Router {
   // PATCH /styles/import
   // REQUEST BODY =
   // {
-  //   "styles": [{ "stylename": "stylename", ...}, ... ],
+  //   "styles": [{ "styleName": "styleName", ...}, ... ],
   //   "replace": true
   // }
   //
@@ -114,7 +123,7 @@ export default function api(styles: Styles): Router {
   // STATUS CODE 400 Bad Request
   //   If styles is null|undefined|falsy, but not an empty []
   //   If any style in styles is null|undefined|falsy
-  //   If any style.stylename is null|undefined|falsy
+  //   If any style.styleName is null|undefined|falsy
   route.patch(
     '/import',
     (req: Request<{ styles: Style[]; replace?: boolean }>, res: Response) => {
@@ -148,6 +157,7 @@ export default function api(styles: Styles): Router {
   // Any other errors should be reported via JSON.
   route.use((err, req, res, next) => {
     let { message, statusCode } = err;
+    console.log(message);
     statusCode = statusCode || 400;
     res.status(statusCode).json({ statusCode, message });
   });

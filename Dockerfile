@@ -12,7 +12,7 @@ RUN mkdir -p /app/data \
 
 # Sets port and data file name.
 # These are the defaults that will be used if not supplied.
-ENV HTTP_PORT=3000 DATA_ROOT=/app/data
+ENV HTTP_PORT=3000 DATA_ROOT=/app/data SAVE_SECONDS=30
 # Creates volume for container data.
 VOLUME ${DATA_ROOT}
 EXPOSE ${HTTP_PORT}

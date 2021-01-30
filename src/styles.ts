@@ -1,14 +1,21 @@
 import { resolve, join } from 'path';
 import { readFile, writeFile } from 'fs/promises';
 import type { Style } from './style';
+
+/**
+ * Name of save file
+ */
+export const FILENAME = 'styles.json';
+
 /**
  * A case-insensitive store for styles
  */
 export class Styles {
   /**
    * Fully qualified path to file where styles are saved to disk.
+   * Exposed for testing purposes.
    */
-  private readonly filename: string;
+  readonly fileName: string;
 
   /**
    * Sorted list of style keys.
@@ -31,11 +38,11 @@ export class Styles {
   private readonly styles: Map<string, Style>;
 
   /**
-   *
-   * @param dataRoot
+   * Construct the instance.
+   * @param dataRoot Root for saving data
    */
   constructor(readonly dataRoot: string) {
-    this.filename = resolve(join(dataRoot, 'styles.json'));
+    this.fileName = resolve(join(dataRoot, FILENAME));
     this.keys = [];
     this.saved = this.keys;
     this.saver = null;
@@ -46,20 +53,10 @@ export class Styles {
    * Create error for bad argument.
    *
    * @param name Name of invalid argument.
+   * @returns error ready to throw.
    */
-  private badArgument(name): Error {
+  private badArgument(name: string): Error {
     return new Error(`The "${name}" argument is required.`);
-  }
-
-  /**
-   * Create error for missing property.
-   * @param parent Parent argument.
-   * @param name Name of missing property.
-   */
-  private badProperty(parent, name): Error {
-    return new Error(
-      `The "${parent}" argument is missing required property "${name}".`
-    );
   }
 
   /**
@@ -75,68 +72,85 @@ export class Styles {
   /**
    * Removes an existing style.
    *
-   * @param stylename Style to remove.
+   * @param styleName Style to remove.
    * @returns true if removed, otherwise false.
    * @throws Error on invalid argument.
    */
-  delete(stylename: string): boolean {
-    if (!stylename) {
-      throw this.badArgument('stylename');
-    }
-    if (this.styles.delete(stylename.toLowerCase())) {
-      this.keys = Array.from(this.styles.keys()).sort();
+  delete(styleName: string): boolean {
+    const key = this.key(styleName);
+    if (this.styles.delete(key)) {
+      this.keys = Array.from(this.styles.keys()).sort(this.sorter);
       return true;
     }
     return false;
   }
 
   /**
-   * Get existing style by name
-   *
-   * @param stylename Name of style to get.
-   */
-  get(stylename: string): Style | undefined {
-    if (!stylename) {
-      throw this.badArgument('stylename');
-    }
-    return this.styles.get(stylename.toLowerCase());
-  }
-
-  /**
    * Flush contents to disk, if necessary.
    */
   async flush(): Promise<void> {
-    if (this.saver) {
-      clearInterval(this.saver);
-      this.saver = null;
-    }
+    clearInterval(this.saver);
+    this.saver = null;
+
     await this.save();
+  }
+
+  /**
+   * Get existing style by name
+   *
+   * @param styleName Name of style to get.
+   * @returns style instance if found, otherwise undefined.
+   * @throws Error if styleName is falsy.
+   */
+  get(styleName: string): Style | undefined {
+    return this.styles.get(this.key(styleName));
   }
 
   /**
    * Loads saved style entries from disk.
    * Starts change listener.
+   * @param dirtyTimer Number of seconds between saves
    */
-  async init(): Promise<void> {
+  async init(dirtyTimer: number): Promise<void> {
+    // Start with an empty list
+    this.styles.clear();
     try {
-      const json = await readFile(this.filename, 'utf-8');
-      this.merge(JSON.parse(json), true);
+      const json = await readFile(this.fileName, 'utf-8');
+      // No need to clear list a second time.
+      this.merge(JSON.parse(json), false);
     } catch (err) {
-      console.warn(`Failed to read "${this.filename}".`);
+      console.warn(`Failed to read "${this.fileName}".`);
     } finally {
+      this.keys = Array.from(this.styles.keys()).sort(this.sorter);
       // No need to save file that was just read
-      this.keys = Array.from(this.styles.keys()).sort();
       this.saved = this.keys;
     }
 
-    // Check save twice per minute.
-    this.saver = setInterval(this.flush.bind(this), 30000);
+    // Start save timer
+    dirtyTimer = dirtyTimer * 1000;
+    if (dirtyTimer) {
+      this.saver = setInterval(this.save.bind(this), dirtyTimer);
+    }
   }
 
   /**
-   * Return list of styles.
+   *  Convert human readable name into a case insensitve key
+   * @param styleName
+   * @returns transformed value
+   * @throws error if styleName is falsy
+   */
+  key(styleName: string, argName: string = 'styleName'): string {
+    if (!styleName) {
+      throw this.badArgument(argName);
+    }
+    return styleName.toLowerCase();
+  }
+
+  /**
+   * Get sorted list of available styles.
    */
   list(): Style[] {
+    // Sort styles by key prior to returning
     return this.keys.map((key) => this.styles.get(key));
   }
 
@@ -149,16 +163,17 @@ export class Styles {
     if (!styles) {
       throw this.badArgument('styles');
     }
-    if (!styles.every((style) => style && style.stylename)) {
+    if (!styles.every((style) => style && style.styleName)) {
       throw new Error('One or more styles are invalid.');
     }
     if (replace) {
       this.styles.clear();
     }
     for (const style of styles) {
-      this.styles.set(style.stylename.toLowerCase(), style);
+      const key = this.key(style.styleName);
+      this.styles.set(key, style);
     }
-    this.keys = Array.from(this.styles.keys()).sort();
+    this.keys = Array.from(this.styles.keys()).sort(this.sorter);
   }
 
   /**
@@ -168,41 +183,51 @@ export class Styles {
    * @throws Error if old style does not exist.
    * @throws Error if new style already exists.
    */
-  rename(oldName: string, newName: string): void {
-    if (!oldName) {
-      throw this.badArgument('oldName');
+  rename(oldName: string, newName: string): string | undefined {
+    // Make sure change is real
+    // Yea this applies if user calls with null | null or undefined | undefined
+    // but I'm willing to let that edge case slide as a noop.
+    if (oldName === newName) {
+      return;
     }
-    if (!newName) {
-      throw this.badArgument('newName');
-    }
-    const oldKey = oldName.toLowerCase();
+    const oldKey = this.key(oldName, 'oldName');
     const style = this.styles.get(oldKey);
     if (!style) {
       throw new Error(`The style named "${oldName}" was not found.`);
     }
-    if (this.styles.has(newName)) {
+    const newKey = this.key(newName, 'newName');
+    if (this.styles.has(newKey)) {
       throw new Error(`A style named "${newName}" already exists.`);
     }
-    style.stylename = newName;
-    this.styles.set(newName.toLowerCase(), style);
+    // Do the rename
+    style.styleName = newName;
+    this.styles.set(newKey, style);
     this.styles.delete(oldKey);
-    this.keys = Array.from(this.styles.keys()).sort();
+    this.keys = Array.from(this.styles.keys()).sort(this.sorter);
+    // Return the key for the new name
+    return newKey;
   }
 
   /**
    * Save cached values to disk.
+   *
+   * @returns Promise resolved on completion.
    */
   private async save(): Promise<void> {
-    try {
-      const keys = this.keys;
-      if (this.saved !== keys) {
-        const styles = Array.from(this.styles.values());
-        const json = JSON.stringify(styles, null, 2);
-        await writeFile(this.filename, json);
+    const keys = this.keys;
+    if (this.saved !== keys) {
+      const styles = Array.from(this.styles.values());
+      const json = JSON.stringify(styles, null, 2);
+      try {
+        await writeFile(this.fileName, json);
+      } catch (err) {
+        console.error(`Failed to write "${this.fileName}".\n${err}`);
+      } finally {
+        // While not the best approach, assume that current write wiil never
+        // succeed.  Rather than filling the log with error after error, every
+        // 30 seoconds, Only try again if the collection is chagned again.
         this.saved = keys;
       }
-    } catch (err) {
-      console.error(`Failed to write "${this.filename}".\n${err}`);
     }
   }
 
@@ -210,18 +235,26 @@ export class Styles {
    * Adds or updates a style.
    *
    * @param style Style instance to add or update.
+   * @returns key for new (or existing) style.
    * @throws Error on invalid argument.
    */
   set(style: Style): string {
     if (!style) {
       throw this.badArgument('style');
     }
-    if (!style.stylename) {
-      throw this.badProperty('style', 'stylename');
-    }
-    const key = style.stylename.toLowerCase();
+    const key = this.key(style.styleName);
     this.styles.set(key, style);
-    this.keys = Array.from(this.styles.keys()).sort();
+    this.keys = Array.from(this.styles.keys()).sort(this.sorter);
     return key;
+  }
+
+  /**
+   * Helper method for sorting style keys
+   *
+   * @param a First name to sort
+   * @param b Second name to sort
+   */
+  private sorter(a: string, b: string) {
+    return a.localeCompare(b);
   }
 }

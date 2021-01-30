@@ -5,5 +5,5 @@ export interface Style {
   //
   // Currently the only known / required value.
   //
-  stylename: string;
+  styleName: string;
 }
