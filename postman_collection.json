@@ -1,0 +1,1207 @@
+{
+	"info": {
+		"_postman_id": "7fbe1170-dc41-45c0-9329-b761186fec00",
+		"name": "licit-style-service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "deprecated",
+			"item": [
+				{
+					"name": "/bulk-import",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"replace\": false,\r\n    \"styles\": {\r\n        \"fm_chaptertitle\": {\r\n            \"styleName\": \"FM_chapterTitle\",\r\n            \"mode\": 1,\r\n            \"description\": \"Chapter Header\",\r\n            \"styles\": {\r\n                \"align\": \"left\",\r\n                \"boldNumbering\": true,\r\n                \"boldSentence\": true,\r\n                \"fontName\": \"Arial\",\r\n                \"fontSize\": \"12\",\r\n                \"strong\": true,\r\n                \"paragraphSpacingBefore\": \"0\",\r\n                \"paragraphSpacingAfter\": \"4\",\r\n                \"styleLevel\": \"1\",\r\n                \"hasNumbering\": true\r\n            }\r\n        },\r\n        \"fm_chfiguretitle\": {\r\n            \"styleName\": \"FM_chFigureTitle\",\r\n            \"mode\": 1,\r\n            \"description\": \"Figure Header\",\r\n            \"styles\": {\r\n                \"align\": \"left\",\r\n                \"boldNumbering\": true,\r\n                \"boldSentence\": false,\r\n                \"fontName\": \"Arial\",\r\n                \"fontSize\": \"11\",\r\n                \"paragraphSpacingBefore\": \"1\",\r\n                \"paragraphSpacingAfter\": \"3\",\r\n                \"boldPartial\": true\r\n            }\r\n        },\r\n        \"fm_chpara0\": {\r\n            \"styleName\": \"FM_chpara0\",\r\n            \"mode\": 1,\r\n            \"description\": \"Paragraph Header level 1\",\r\n            \"styles\": {\r\n                \"align\": \"left\",\r\n                \"boldNumbering\": true,\r\n                \"boldSentence\": true,\r\n                \"fontName\": \"Arial\",\r\n                \"fontSize\": \"12\",\r\n                \"boldPartial\": true,\r\n                \"paragraphSpacingBefore\": \"3\",\r\n                \"paragraphSpacingAfter\": \"3\",\r\n                \"styleLevel\": \"2\",\r\n                \"hasNumbering\": true\r\n            }\r\n        },\r\n        \"fm_chsubpara1\": {\r\n            \"styleName\": \"FM_chsubpara1\",\r\n            \"mode\": 1,\r\n            \"description\": \"Paragraph hader level 3\",\r\n            \"styles\": {\r\n                \"align\": \"left\",\r\n                \"boldNumbering\": true,\r\n                \"boldSentence\": true,\r\n                \"fontName\": \"Arial\",\r\n                \"fontSize\": \"12\",\r\n                \"paragraphSpacingBefore\": \"4\",\r\n                \"paragraphSpacingAfter\": \"4\",\r\n                \"styleLevel\": \"3\",\r\n                \"hasNumbering\": true,\r\n                \"indent\": \"1\",\r\n                \"boldPartial\": true\r\n            }\r\n        },\r\n        \"fm_chsubpara2\": {\r\n            \"styleName\": \"FM_chsubpara2\",\r\n            \"mode\": 1,\r\n            \"description\": \"Paragraph Header Level 4\",\r\n            \"styles\": {\r\n                \"align\": \"left\",\r\n                \"boldNumbering\": true,\r\n                \"boldSentence\": true,\r\n                \"fontName\": \"Arial\",\r\n                \"fontSize\": \"12\",\r\n                \"paragraphSpacingBefore\": \"2\",\r\n                \"paragraphSpacingAfter\": \"3\",\r\n                \"styleLevel\": \"4\",\r\n                \"hasNumbering\": true,\r\n                \"indent\": \"2\"\r\n            }\r\n        },\r\n        \"fm_chsubpara3\": {\r\n            \"styleName\": \"FM_chsubpara3\",\r\n            \"mode\": 0,\r\n            \"styles\": {\r\n                \"align\": \"left\",\r\n                \"boldNumbering\": true,\r\n                \"boldSentence\": true,\r\n                \"fontName\": \"Arial\",\r\n                \"fontSize\": \"12\",\r\n                \"paragraphSpacingBefore\": \"4\",\r\n                \"paragraphSpacingAfter\": \"4\",\r\n                \"styleLevel\": \"5\",\r\n                \"hasNumbering\": true,\r\n                \"indent\": \"3\"\r\n            },\r\n            \"description\": \"Paragraph header level 5\"\r\n        },\r\n        \"fm_chsubpara4\": {\r\n            \"styleName\": \"FM_chsubpara4\",\r\n            \"mode\": 1,\r\n            \"description\": \"Paragraph header level 6\",\r\n            \"styles\": {\r\n                \"align\": \"left\",\r\n                \"boldNumbering\": true,\r\n                \"boldSentence\": true,\r\n                \"fontName\": \"Arial\",\r\n                \"fontSize\": \"12\",\r\n                \"paragraphSpacingBefore\": \"4\",\r\n                \"paragraphSpacingAfter\": \"4\",\r\n                \"styleLevel\": \"6\",\r\n                \"hasNumbering\": true,\r\n                \"indent\": \"4\"\r\n            }\r\n        },\r\n        \"fm_chtabletitle\": {\r\n            \"styleName\": \"FM_chTableTitle\",\r\n            \"mode\": 0,\r\n            \"styles\": {\r\n                \"align\": \"left\",\r\n                \"boldNumbering\": true,\r\n                \"boldSentence\": false,\r\n                \"fontName\": \"Arial\",\r\n                \"fontSize\": \"11\",\r\n                \"boldPartial\": true,\r\n                \"paragraphSpacingBefore\": \"1\",\r\n                \"paragraphSpacingAfter\": \"3\"\r\n            },\r\n            \"description\": \"Table Header\"\r\n        },\r\n        \"fm_i_bullet_0\": {\r\n            \"styleName\": \"FM_i_bullet_0\",\r\n            \"mode\": 1,\r\n            \"description\": \"Bullet item level 0\",\r\n            \"styles\": {\r\n                \"align\": \"left\",\r\n                \"boldNumbering\": true,\r\n                \"boldSentence\": true,\r\n                \"paragraphSpacingBefore\": \"3\",\r\n                \"paragraphSpacingAfter\": \"3\",\r\n                \"fontName\": \"Arial\",\r\n                \"fontSize\": \"11\"\r\n            }\r\n        },\r\n        \"fm_i_bullet_1\": {\r\n            \"styleName\": \"FM_i_bullet_1\",\r\n            \"mode\": 0,\r\n            \"styles\": {\r\n                \"align\": \"left\",\r\n                \"boldNumbering\": true,\r\n                \"boldSentence\": true,\r\n                \"fontName\": \"Arial\",\r\n                \"fontSize\": \"11\",\r\n                \"paragraphSpacingBefore\": \"3\",\r\n                \"paragraphSpacingAfter\": \"3\",\r\n                \"indent\": \"1\"\r\n            },\r\n            \"description\": \"Bullet item level 1\"\r\n        },\r\n        \"fm_i_bullet_2\": {\r\n            \"styleName\": \"FM_i_bullet_2\",\r\n            \"mode\": 1,\r\n            \"description\": \"Bullet item level 2\",\r\n            \"styles\": {\r\n                \"align\": \"left\",\r\n                \"boldNumbering\": true,\r\n                \"boldSentence\": true,\r\n                \"fontName\": \"Arial\",\r\n                \"fontSize\": \"11\",\r\n                \"paragraphSpacingBefore\": \"3\",\r\n                \"paragraphSpacingAfter\": \"3\",\r\n                \"indent\": \"2\"\r\n            }\r\n        },\r\n        \"fm_i_bullet_3\": {\r\n            \"styleName\": \"FM_i_bullet_3\",\r\n            \"mode\": 0,\r\n            \"styles\": {\r\n                \"align\": \"left\",\r\n                \"boldNumbering\": true,\r\n                \"boldSentence\": true,\r\n                \"fontName\": \"Arial\",\r\n                \"fontSize\": \"11\",\r\n                \"paragraphSpacingBefore\": \"3\",\r\n                \"paragraphSpacingAfter\": \"3\",\r\n                \"indent\": \"3\"\r\n            },\r\n            \"description\": \"Bullet item level 3\"\r\n        }\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{endpoint}}/bulk-import",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"bulk-import"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "/bulk-import (map)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"replace\": false,\r\n    \"styles\": {\r\n        \"fm_chaptertitle\": {\r\n            \"styleName\": \"FM_chapterTitle\",\r\n            \"mode\": 1,\r\n            \"description\": \"Chapter Header\",\r\n            \"styles\": {\r\n                \"align\": \"left\",\r\n                \"boldNumbering\": true,\r\n                \"boldSentence\": true,\r\n                \"fontName\": \"Arial\",\r\n                \"fontSize\": \"12\",\r\n                \"strong\": true,\r\n                \"paragraphSpacingBefore\": \"0\",\r\n                \"paragraphSpacingAfter\": \"4\",\r\n                \"styleLevel\": \"1\",\r\n                \"hasNumbering\": true\r\n            }\r\n        },\r\n        \"fm_chfiguretitle\": {\r\n            \"styleName\": \"FM_chFigureTitle\",\r\n            \"mode\": 1,\r\n            \"description\": \"Figure Header\",\r\n            \"styles\": {\r\n                \"align\": \"left\",\r\n                \"boldNumbering\": true,\r\n                \"boldSentence\": false,\r\n                \"fontName\": \"Arial\",\r\n                \"fontSize\": \"11\",\r\n                \"paragraphSpacingBefore\": \"1\",\r\n                \"paragraphSpacingAfter\": \"3\",\r\n                \"boldPartial\": true\r\n            }\r\n        },\r\n        \"fm_chpara0\": {\r\n            \"styleName\": \"FM_chpara0\",\r\n            \"mode\": 1,\r\n            \"description\": \"Paragraph Header level 1\",\r\n            \"styles\": {\r\n                \"align\": \"left\",\r\n                \"boldNumbering\": true,\r\n                \"boldSentence\": true,\r\n                \"fontName\": \"Arial\",\r\n                \"fontSize\": \"12\",\r\n                \"boldPartial\": true,\r\n                \"paragraphSpacingBefore\": \"3\",\r\n                \"paragraphSpacingAfter\": \"3\",\r\n                \"styleLevel\": \"2\",\r\n                \"hasNumbering\": true\r\n            }\r\n        },\r\n        \"fm_chsubpara1\": {\r\n            \"styleName\": \"FM_chsubpara1\",\r\n            \"mode\": 1,\r\n            \"description\": \"Paragraph hader level 3\",\r\n            \"styles\": {\r\n                \"align\": \"left\",\r\n                \"boldNumbering\": true,\r\n                \"boldSentence\": true,\r\n                \"fontName\": \"Arial\",\r\n                \"fontSize\": \"12\",\r\n                \"paragraphSpacingBefore\": \"4\",\r\n                \"paragraphSpacingAfter\": \"4\",\r\n                \"styleLevel\": \"3\",\r\n                \"hasNumbering\": true,\r\n                \"indent\": \"1\",\r\n                \"boldPartial\": true\r\n            }\r\n        },\r\n        \"fm_chsubpara2\": {\r\n            \"styleName\": \"FM_chsubpara2\",\r\n            \"mode\": 1,\r\n            \"description\": \"Paragraph Header Level 4\",\r\n            \"styles\": {\r\n                \"align\": \"left\",\r\n                \"boldNumbering\": true,\r\n                \"boldSentence\": true,\r\n                \"fontName\": \"Arial\",\r\n                \"fontSize\": \"12\",\r\n                \"paragraphSpacingBefore\": \"2\",\r\n                \"paragraphSpacingAfter\": \"3\",\r\n                \"styleLevel\": \"4\",\r\n                \"hasNumbering\": true,\r\n                \"indent\": \"2\"\r\n            }\r\n        },\r\n        \"fm_chsubpara3\": {\r\n            \"styleName\": \"FM_chsubpara3\",\r\n            \"mode\": 0,\r\n            \"styles\": {\r\n                \"align\": \"left\",\r\n                \"boldNumbering\": true,\r\n                \"boldSentence\": true,\r\n                \"fontName\": \"Arial\",\r\n                \"fontSize\": \"12\",\r\n                \"paragraphSpacingBefore\": \"4\",\r\n                \"paragraphSpacingAfter\": \"4\",\r\n                \"styleLevel\": \"5\",\r\n                \"hasNumbering\": true,\r\n                \"indent\": \"3\"\r\n            },\r\n            \"description\": \"Paragraph header level 5\"\r\n        },\r\n        \"fm_chsubpara4\": {\r\n            \"styleName\": \"FM_chsubpara4\",\r\n            \"mode\": 1,\r\n            \"description\": \"Paragraph header level 6\",\r\n            \"styles\": {\r\n                \"align\": \"left\",\r\n                \"boldNumbering\": true,\r\n                \"boldSentence\": true,\r\n                \"fontName\": \"Arial\",\r\n                \"fontSize\": \"12\",\r\n                \"paragraphSpacingBefore\": \"4\",\r\n                \"paragraphSpacingAfter\": \"4\",\r\n                \"styleLevel\": \"6\",\r\n                \"hasNumbering\": true,\r\n                \"indent\": \"4\"\r\n            }\r\n        },\r\n        \"fm_chtabletitle\": {\r\n            \"styleName\": \"FM_chTableTitle\",\r\n            \"mode\": 0,\r\n            \"styles\": {\r\n                \"align\": \"left\",\r\n                \"boldNumbering\": true,\r\n                \"boldSentence\": false,\r\n                \"fontName\": \"Arial\",\r\n                \"fontSize\": \"11\",\r\n                \"boldPartial\": true,\r\n                \"paragraphSpacingBefore\": \"1\",\r\n                \"paragraphSpacingAfter\": \"3\"\r\n            },\r\n            \"description\": \"Table Header\"\r\n        },\r\n        \"fm_i_bullet_0\": {\r\n            \"styleName\": \"FM_i_bullet_0\",\r\n            \"mode\": 1,\r\n            \"description\": \"Bullet item level 0\",\r\n            \"styles\": {\r\n                \"align\": \"left\",\r\n                \"boldNumbering\": true,\r\n                \"boldSentence\": true,\r\n                \"paragraphSpacingBefore\": \"3\",\r\n                \"paragraphSpacingAfter\": \"3\",\r\n                \"fontName\": \"Arial\",\r\n                \"fontSize\": \"11\"\r\n            }\r\n        },\r\n        \"fm_i_bullet_1\": {\r\n            \"styleName\": \"FM_i_bullet_1\",\r\n            \"mode\": 0,\r\n            \"styles\": {\r\n                \"align\": \"left\",\r\n                \"boldNumbering\": true,\r\n                \"boldSentence\": true,\r\n                \"fontName\": \"Arial\",\r\n                \"fontSize\": \"11\",\r\n                \"paragraphSpacingBefore\": \"3\",\r\n                \"paragraphSpacingAfter\": \"3\",\r\n                \"indent\": \"1\"\r\n            },\r\n            \"description\": \"Bullet item level 1\"\r\n        },\r\n        \"fm_i_bullet_2\": {\r\n            \"styleName\": \"FM_i_bullet_2\",\r\n            \"mode\": 1,\r\n            \"description\": \"Bullet item level 2\",\r\n            \"styles\": {\r\n                \"align\": \"left\",\r\n                \"boldNumbering\": true,\r\n                \"boldSentence\": true,\r\n                \"fontName\": \"Arial\",\r\n                \"fontSize\": \"11\",\r\n                \"paragraphSpacingBefore\": \"3\",\r\n                \"paragraphSpacingAfter\": \"3\",\r\n                \"indent\": \"2\"\r\n            }\r\n        },\r\n        \"fm_i_bullet_3\": {\r\n            \"styleName\": \"FM_i_bullet_3\",\r\n            \"mode\": 0,\r\n            \"styles\": {\r\n                \"align\": \"left\",\r\n                \"boldNumbering\": true,\r\n                \"boldSentence\": true,\r\n                \"fontName\": \"Arial\",\r\n                \"fontSize\": \"11\",\r\n                \"paragraphSpacingBefore\": \"3\",\r\n                \"paragraphSpacingAfter\": \"3\",\r\n                \"indent\": \"3\"\r\n            },\r\n            \"description\": \"Bullet item level 3\"\r\n        }\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{endpoint}}/bulk-import",
+									"host": [
+										"{{endpoint}}"
+									],
+									"path": [
+										"bulk-import"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"d67-TrilspB8TRorQ9eUpr87KGtY5vQ\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 30 Jan 2021 16:05:24 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"styles\": {\n        \"fm_chaptertitle\": {\n            \"styleName\": \"FM_chapterTitle\",\n            \"mode\": 1,\n            \"description\": \"Chapter Header\",\n            \"styles\": {\n                \"align\": \"left\",\n                \"boldNumbering\": true,\n                \"boldSentence\": true,\n                \"fontName\": \"Arial\",\n                \"fontSize\": \"12\",\n                \"strong\": true,\n                \"paragraphSpacingBefore\": \"0\",\n                \"paragraphSpacingAfter\": \"4\",\n                \"styleLevel\": \"1\",\n                \"hasNumbering\": true\n            }\n        },\n        \"fm_chfiguretitle\": {\n            \"styleName\": \"FM_chFigureTitle\",\n            \"mode\": 1,\n            \"description\": \"Figure Header\",\n            \"styles\": {\n                \"align\": \"left\",\n                \"boldNumbering\": true,\n                \"boldSentence\": false,\n                \"fontName\": \"Arial\",\n                \"fontSize\": \"11\",\n                \"paragraphSpacingBefore\": \"1\",\n                \"paragraphSpacingAfter\": \"3\",\n                \"boldPartial\": true\n            }\n        },\n        \"fm_chpara0\": {\n            \"styleName\": \"FM_chpara0\",\n            \"mode\": 1,\n            \"description\": \"Paragraph Header level 1\",\n            \"styles\": {\n                \"align\": \"left\",\n                \"boldNumbering\": true,\n                \"boldSentence\": true,\n                \"fontName\": \"Arial\",\n                \"fontSize\": \"12\",\n                \"boldPartial\": true,\n                \"paragraphSpacingBefore\": \"3\",\n                \"paragraphSpacingAfter\": \"3\",\n                \"styleLevel\": \"2\",\n                \"hasNumbering\": true\n            }\n        },\n        \"fm_chsubpara1\": {\n            \"styleName\": \"FM_chsubpara1\",\n            \"mode\": 1,\n            \"description\": \"Paragraph hader level 3\",\n            \"styles\": {\n                \"align\": \"left\",\n                \"boldNumbering\": true,\n                \"boldSentence\": true,\n                \"fontName\": \"Arial\",\n                \"fontSize\": \"12\",\n                \"paragraphSpacingBefore\": \"4\",\n                \"paragraphSpacingAfter\": \"4\",\n                \"styleLevel\": \"3\",\n                \"hasNumbering\": true,\n                \"indent\": \"1\",\n                \"boldPartial\": true\n            }\n        },\n        \"fm_chsubpara2\": {\n            \"styleName\": \"FM_chsubpara2\",\n            \"mode\": 1,\n            \"description\": \"Paragraph Header Level 4\",\n            \"styles\": {\n                \"align\": \"left\",\n                \"boldNumbering\": true,\n                \"boldSentence\": true,\n                \"fontName\": \"Arial\",\n                \"fontSize\": \"12\",\n                \"paragraphSpacingBefore\": \"2\",\n                \"paragraphSpacingAfter\": \"3\",\n                \"styleLevel\": \"4\",\n                \"hasNumbering\": true,\n                \"indent\": \"2\"\n            }\n        },\n        \"fm_chsubpara3\": {\n            \"styleName\": \"FM_chsubpara3\",\n            \"mode\": 0,\n            \"styles\": {\n                \"align\": \"left\",\n                \"boldNumbering\": true,\n                \"boldSentence\": true,\n                \"fontName\": \"Arial\",\n                \"fontSize\": \"12\",\n                \"paragraphSpacingBefore\": \"4\",\n                \"paragraphSpacingAfter\": \"4\",\n                \"styleLevel\": \"5\",\n                \"hasNumbering\": true,\n                \"indent\": \"3\"\n            },\n            \"description\": \"Paragraph header level 5\"\n        },\n        \"fm_chsubpara4\": {\n            \"styleName\": \"FM_chsubpara4\",\n            \"mode\": 1,\n            \"description\": \"Paragraph header level 6\",\n            \"styles\": {\n                \"align\": \"left\",\n                \"boldNumbering\": true,\n                \"boldSentence\": true,\n                \"fontName\": \"Arial\",\n                \"fontSize\": \"12\",\n                \"paragraphSpacingBefore\": \"4\",\n                \"paragraphSpacingAfter\": \"4\",\n                \"styleLevel\": \"6\",\n                \"hasNumbering\": true,\n                \"indent\": \"4\"\n            }\n        },\n        \"fm_chtabletitle\": {\n            \"styleName\": \"FM_chTableTitle\",\n            \"mode\": 0,\n            \"styles\": {\n                \"align\": \"left\",\n                \"boldNumbering\": true,\n                \"boldSentence\": false,\n                \"fontName\": \"Arial\",\n                \"fontSize\": \"11\",\n                \"boldPartial\": true,\n                \"paragraphSpacingBefore\": \"1\",\n                \"paragraphSpacingAfter\": \"3\"\n            },\n            \"description\": \"Table Header\"\n        },\n        \"fm_i_bullet_0\": {\n            \"styleName\": \"FM_i_bullet_0\",\n            \"mode\": 1,\n            \"description\": \"Bullet item level 0\",\n            \"styles\": {\n                \"align\": \"left\",\n                \"boldNumbering\": true,\n                \"boldSentence\": true,\n                \"paragraphSpacingBefore\": \"3\",\n                \"paragraphSpacingAfter\": \"3\",\n                \"fontName\": \"Arial\",\n                \"fontSize\": \"11\"\n            }\n        },\n        \"fm_i_bullet_1\": {\n            \"styleName\": \"FM_i_bullet_1\",\n            \"mode\": 0,\n            \"styles\": {\n                \"align\": \"left\",\n                \"boldNumbering\": true,\n                \"boldSentence\": true,\n                \"fontName\": \"Arial\",\n                \"fontSize\": \"11\",\n                \"paragraphSpacingBefore\": \"3\",\n                \"paragraphSpacingAfter\": \"3\",\n                \"indent\": \"1\"\n            },\n            \"description\": \"Bullet item level 1\"\n        },\n        \"fm_i_bullet_2\": {\n            \"styleName\": \"FM_i_bullet_2\",\n            \"mode\": 1,\n            \"description\": \"Bullet item level 2\",\n            \"styles\": {\n                \"align\": \"left\",\n                \"boldNumbering\": true,\n                \"boldSentence\": true,\n                \"fontName\": \"Arial\",\n                \"fontSize\": \"11\",\n                \"paragraphSpacingBefore\": \"3\",\n                \"paragraphSpacingAfter\": \"3\",\n                \"indent\": \"2\"\n            }\n        },\n        \"fm_i_bullet_3\": {\n            \"styleName\": \"FM_i_bullet_3\",\n            \"mode\": 0,\n            \"styles\": {\n                \"align\": \"left\",\n                \"boldNumbering\": true,\n                \"boldSentence\": true,\n                \"fontName\": \"Arial\",\n                \"fontSize\": \"11\",\n                \"paragraphSpacingBefore\": \"3\",\n                \"paragraphSpacingAfter\": \"3\",\n                \"indent\": \"3\"\n            },\n            \"description\": \"Bullet item level 3\"\n        }\n    }\n}"
+						},
+						{
+							"name": "/bulk-import (array)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"replace\": false,\r\n    \"styles\": [\r\n        {\r\n            \"styleName\": \"FM_chapterTitle\",\r\n            \"mode\": 1,\r\n            \"description\": \"Chapter Header\",\r\n            \"styles\": {\r\n                \"align\": \"left\",\r\n                \"boldNumbering\": true,\r\n                \"boldSentence\": true,\r\n                \"fontName\": \"Arial\",\r\n                \"fontSize\": \"12\",\r\n                \"strong\": true,\r\n                \"paragraphSpacingBefore\": \"0\",\r\n                \"paragraphSpacingAfter\": \"4\",\r\n                \"styleLevel\": \"1\",\r\n                \"hasNumbering\": true\r\n            }\r\n        },\r\n        {\r\n            \"styleName\": \"FM_chFigureTitle\",\r\n            \"mode\": 1,\r\n            \"description\": \"Figure Header\",\r\n            \"styles\": {\r\n                \"align\": \"left\",\r\n                \"boldNumbering\": true,\r\n                \"boldSentence\": false,\r\n                \"fontName\": \"Arial\",\r\n                \"fontSize\": \"11\",\r\n                \"paragraphSpacingBefore\": \"1\",\r\n                \"paragraphSpacingAfter\": \"3\",\r\n                \"boldPartial\": true\r\n            }\r\n        },\r\n        {\r\n            \"styleName\": \"FM_chpara0\",\r\n            \"mode\": 1,\r\n            \"description\": \"Paragraph Header level 1\",\r\n            \"styles\": {\r\n                \"align\": \"left\",\r\n                \"boldNumbering\": true,\r\n                \"boldSentence\": true,\r\n                \"fontName\": \"Arial\",\r\n                \"fontSize\": \"12\",\r\n                \"boldPartial\": true,\r\n                \"paragraphSpacingBefore\": \"3\",\r\n                \"paragraphSpacingAfter\": \"3\",\r\n                \"styleLevel\": \"2\",\r\n                \"hasNumbering\": true\r\n            }\r\n        },\r\n        {\r\n            \"styleName\": \"FM_chsubpara1\",\r\n            \"mode\": 1,\r\n            \"description\": \"Paragraph hader level 3\",\r\n            \"styles\": {\r\n                \"align\": \"left\",\r\n                \"boldNumbering\": true,\r\n                \"boldSentence\": true,\r\n                \"fontName\": \"Arial\",\r\n                \"fontSize\": \"12\",\r\n                \"paragraphSpacingBefore\": \"4\",\r\n                \"paragraphSpacingAfter\": \"4\",\r\n                \"styleLevel\": \"3\",\r\n                \"hasNumbering\": true,\r\n                \"indent\": \"1\",\r\n                \"boldPartial\": true\r\n            }\r\n        },\r\n        {\r\n            \"styleName\": \"FM_chsubpara2\",\r\n            \"mode\": 1,\r\n            \"description\": \"Paragraph Header Level 4\",\r\n            \"styles\": {\r\n                \"align\": \"left\",\r\n                \"boldNumbering\": true,\r\n                \"boldSentence\": true,\r\n                \"fontName\": \"Arial\",\r\n                \"fontSize\": \"12\",\r\n                \"paragraphSpacingBefore\": \"2\",\r\n                \"paragraphSpacingAfter\": \"3\",\r\n                \"styleLevel\": \"4\",\r\n                \"hasNumbering\": true,\r\n                \"indent\": \"2\"\r\n            }\r\n        },\r\n        {\r\n            \"styleName\": \"FM_chsubpara3\",\r\n            \"mode\": 0,\r\n            \"styles\": {\r\n                \"align\": \"left\",\r\n                \"boldNumbering\": true,\r\n                \"boldSentence\": true,\r\n                \"fontName\": \"Arial\",\r\n                \"fontSize\": \"12\",\r\n                \"paragraphSpacingBefore\": \"4\",\r\n                \"paragraphSpacingAfter\": \"4\",\r\n                \"styleLevel\": \"5\",\r\n                \"hasNumbering\": true,\r\n                \"indent\": \"3\"\r\n            },\r\n            \"description\": \"Paragraph header level 5\"\r\n        },\r\n        {\r\n            \"styleName\": \"FM_chsubpara4\",\r\n            \"mode\": 1,\r\n            \"description\": \"Paragraph header level 6\",\r\n            \"styles\": {\r\n                \"align\": \"left\",\r\n                \"boldNumbering\": true,\r\n                \"boldSentence\": true,\r\n                \"fontName\": \"Arial\",\r\n                \"fontSize\": \"12\",\r\n                \"paragraphSpacingBefore\": \"4\",\r\n                \"paragraphSpacingAfter\": \"4\",\r\n                \"styleLevel\": \"6\",\r\n                \"hasNumbering\": true,\r\n                \"indent\": \"4\"\r\n            }\r\n        },\r\n        {\r\n            \"styleName\": \"FM_chTableTitle\",\r\n            \"mode\": 0,\r\n            \"styles\": {\r\n                \"align\": \"left\",\r\n                \"boldNumbering\": true,\r\n                \"boldSentence\": false,\r\n                \"fontName\": \"Arial\",\r\n                \"fontSize\": \"11\",\r\n                \"boldPartial\": true,\r\n                \"paragraphSpacingBefore\": \"1\",\r\n                \"paragraphSpacingAfter\": \"3\"\r\n            },\r\n            \"description\": \"Table Header\"\r\n        },\r\n        {\r\n            \"styleName\": \"FM_i_bullet_0\",\r\n            \"mode\": 1,\r\n            \"description\": \"Bullet item level 0\",\r\n            \"styles\": {\r\n                \"align\": \"left\",\r\n                \"boldNumbering\": true,\r\n                \"boldSentence\": true,\r\n                \"paragraphSpacingBefore\": \"3\",\r\n                \"paragraphSpacingAfter\": \"3\",\r\n                \"fontName\": \"Arial\",\r\n                \"fontSize\": \"11\"\r\n            }\r\n        },\r\n        {\r\n            \"styleName\": \"FM_i_bullet_1\",\r\n            \"mode\": 0,\r\n            \"styles\": {\r\n                \"align\": \"left\",\r\n                \"boldNumbering\": true,\r\n                \"boldSentence\": true,\r\n                \"fontName\": \"Arial\",\r\n                \"fontSize\": \"11\",\r\n                \"paragraphSpacingBefore\": \"3\",\r\n                \"paragraphSpacingAfter\": \"3\",\r\n                \"indent\": \"1\"\r\n            },\r\n            \"description\": \"Bullet item level 1\"\r\n        },\r\n        {\r\n            \"styleName\": \"FM_i_bullet_2\",\r\n            \"mode\": 1,\r\n            \"description\": \"Bullet item level 2\",\r\n            \"styles\": {\r\n                \"align\": \"left\",\r\n                \"boldNumbering\": true,\r\n                \"boldSentence\": true,\r\n                \"fontName\": \"Arial\",\r\n                \"fontSize\": \"11\",\r\n                \"paragraphSpacingBefore\": \"3\",\r\n                \"paragraphSpacingAfter\": \"3\",\r\n                \"indent\": \"2\"\r\n            }\r\n        },\r\n        {\r\n            \"styleName\": \"FM_i_bullet_3\",\r\n            \"mode\": 0,\r\n            \"styles\": {\r\n                \"align\": \"left\",\r\n                \"boldNumbering\": true,\r\n                \"boldSentence\": true,\r\n                \"fontName\": \"Arial\",\r\n                \"fontSize\": \"11\",\r\n                \"paragraphSpacingBefore\": \"3\",\r\n                \"paragraphSpacingAfter\": \"3\",\r\n                \"indent\": \"3\"\r\n            },\r\n            \"description\": \"Bullet item level 3\"\r\n        }\r\n    ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{endpoint}}/bulk-import",
+									"host": [
+										"{{endpoint}}"
+									],
+									"path": [
+										"bulk-import"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"d67-TrilspB8TRorQ9eUpr87KGtY5vQ\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 30 Jan 2021 15:56:46 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"styles\": {\n        \"fm_chaptertitle\": {\n            \"styleName\": \"FM_chapterTitle\",\n            \"mode\": 1,\n            \"description\": \"Chapter Header\",\n            \"styles\": {\n                \"align\": \"left\",\n                \"boldNumbering\": true,\n                \"boldSentence\": true,\n                \"fontName\": \"Arial\",\n                \"fontSize\": \"12\",\n                \"strong\": true,\n                \"paragraphSpacingBefore\": \"0\",\n                \"paragraphSpacingAfter\": \"4\",\n                \"styleLevel\": \"1\",\n                \"hasNumbering\": true\n            }\n        },\n        \"fm_chfiguretitle\": {\n            \"styleName\": \"FM_chFigureTitle\",\n            \"mode\": 1,\n            \"description\": \"Figure Header\",\n            \"styles\": {\n                \"align\": \"left\",\n                \"boldNumbering\": true,\n                \"boldSentence\": false,\n                \"fontName\": \"Arial\",\n                \"fontSize\": \"11\",\n                \"paragraphSpacingBefore\": \"1\",\n                \"paragraphSpacingAfter\": \"3\",\n                \"boldPartial\": true\n            }\n        },\n        \"fm_chpara0\": {\n            \"styleName\": \"FM_chpara0\",\n            \"mode\": 1,\n            \"description\": \"Paragraph Header level 1\",\n            \"styles\": {\n                \"align\": \"left\",\n                \"boldNumbering\": true,\n                \"boldSentence\": true,\n                \"fontName\": \"Arial\",\n                \"fontSize\": \"12\",\n                \"boldPartial\": true,\n                \"paragraphSpacingBefore\": \"3\",\n                \"paragraphSpacingAfter\": \"3\",\n                \"styleLevel\": \"2\",\n                \"hasNumbering\": true\n            }\n        },\n        \"fm_chsubpara1\": {\n            \"styleName\": \"FM_chsubpara1\",\n            \"mode\": 1,\n            \"description\": \"Paragraph hader level 3\",\n            \"styles\": {\n                \"align\": \"left\",\n                \"boldNumbering\": true,\n                \"boldSentence\": true,\n                \"fontName\": \"Arial\",\n                \"fontSize\": \"12\",\n                \"paragraphSpacingBefore\": \"4\",\n                \"paragraphSpacingAfter\": \"4\",\n                \"styleLevel\": \"3\",\n                \"hasNumbering\": true,\n                \"indent\": \"1\",\n                \"boldPartial\": true\n            }\n        },\n        \"fm_chsubpara2\": {\n            \"styleName\": \"FM_chsubpara2\",\n            \"mode\": 1,\n            \"description\": \"Paragraph Header Level 4\",\n            \"styles\": {\n                \"align\": \"left\",\n                \"boldNumbering\": true,\n                \"boldSentence\": true,\n                \"fontName\": \"Arial\",\n                \"fontSize\": \"12\",\n                \"paragraphSpacingBefore\": \"2\",\n                \"paragraphSpacingAfter\": \"3\",\n                \"styleLevel\": \"4\",\n                \"hasNumbering\": true,\n                \"indent\": \"2\"\n            }\n        },\n        \"fm_chsubpara3\": {\n            \"styleName\": \"FM_chsubpara3\",\n            \"mode\": 0,\n            \"styles\": {\n                \"align\": \"left\",\n                \"boldNumbering\": true,\n                \"boldSentence\": true,\n                \"fontName\": \"Arial\",\n                \"fontSize\": \"12\",\n                \"paragraphSpacingBefore\": \"4\",\n                \"paragraphSpacingAfter\": \"4\",\n                \"styleLevel\": \"5\",\n                \"hasNumbering\": true,\n                \"indent\": \"3\"\n            },\n            \"description\": \"Paragraph header level 5\"\n        },\n        \"fm_chsubpara4\": {\n            \"styleName\": \"FM_chsubpara4\",\n            \"mode\": 1,\n            \"description\": \"Paragraph header level 6\",\n            \"styles\": {\n                \"align\": \"left\",\n                \"boldNumbering\": true,\n                \"boldSentence\": true,\n                \"fontName\": \"Arial\",\n                \"fontSize\": \"12\",\n                \"paragraphSpacingBefore\": \"4\",\n                \"paragraphSpacingAfter\": \"4\",\n                \"styleLevel\": \"6\",\n                \"hasNumbering\": true,\n                \"indent\": \"4\"\n            }\n        },\n        \"fm_chtabletitle\": {\n            \"styleName\": \"FM_chTableTitle\",\n            \"mode\": 0,\n            \"styles\": {\n                \"align\": \"left\",\n                \"boldNumbering\": true,\n                \"boldSentence\": false,\n                \"fontName\": \"Arial\",\n                \"fontSize\": \"11\",\n                \"boldPartial\": true,\n                \"paragraphSpacingBefore\": \"1\",\n                \"paragraphSpacingAfter\": \"3\"\n            },\n            \"description\": \"Table Header\"\n        },\n        \"fm_i_bullet_0\": {\n            \"styleName\": \"FM_i_bullet_0\",\n            \"mode\": 1,\n            \"description\": \"Bullet item level 0\",\n            \"styles\": {\n                \"align\": \"left\",\n                \"boldNumbering\": true,\n                \"boldSentence\": true,\n                \"paragraphSpacingBefore\": \"3\",\n                \"paragraphSpacingAfter\": \"3\",\n                \"fontName\": \"Arial\",\n                \"fontSize\": \"11\"\n            }\n        },\n        \"fm_i_bullet_1\": {\n            \"styleName\": \"FM_i_bullet_1\",\n            \"mode\": 0,\n            \"styles\": {\n                \"align\": \"left\",\n                \"boldNumbering\": true,\n                \"boldSentence\": true,\n                \"fontName\": \"Arial\",\n                \"fontSize\": \"11\",\n                \"paragraphSpacingBefore\": \"3\",\n                \"paragraphSpacingAfter\": \"3\",\n                \"indent\": \"1\"\n            },\n            \"description\": \"Bullet item level 1\"\n        },\n        \"fm_i_bullet_2\": {\n            \"styleName\": \"FM_i_bullet_2\",\n            \"mode\": 1,\n            \"description\": \"Bullet item level 2\",\n            \"styles\": {\n                \"align\": \"left\",\n                \"boldNumbering\": true,\n                \"boldSentence\": true,\n                \"fontName\": \"Arial\",\n                \"fontSize\": \"11\",\n                \"paragraphSpacingBefore\": \"3\",\n                \"paragraphSpacingAfter\": \"3\",\n                \"indent\": \"2\"\n            }\n        },\n        \"fm_i_bullet_3\": {\n            \"styleName\": \"FM_i_bullet_3\",\n            \"mode\": 0,\n            \"styles\": {\n                \"align\": \"left\",\n                \"boldNumbering\": true,\n                \"boldSentence\": true,\n                \"fontName\": \"Arial\",\n                \"fontSize\": \"11\",\n                \"paragraphSpacingBefore\": \"3\",\n                \"paragraphSpacingAfter\": \"3\",\n                \"indent\": \"3\"\n            },\n            \"description\": \"Bullet item level 3\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "/getcustomstyles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/getcustomstyles",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"getcustomstyles"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "/getcustomstyles",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{endpoint}}/getcustomstyles/",
+									"host": [
+										"{{endpoint}}"
+									],
+									"path": [
+										"getcustomstyles",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"c98-l8UKWSs5Q2prffx9kcNRwraQDNk\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 30 Jan 2021 15:40:01 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"styleName\": \"FM_chapterTitle\",\n        \"mode\": 1,\n        \"description\": \"Chapter Header\",\n        \"styles\": {\n            \"align\": \"left\",\n            \"boldNumbering\": true,\n            \"boldSentence\": true,\n            \"fontName\": \"Arial\",\n            \"fontSize\": \"12\",\n            \"strong\": true,\n            \"paragraphSpacingBefore\": \"0\",\n            \"paragraphSpacingAfter\": \"4\",\n            \"styleLevel\": \"1\",\n            \"hasNumbering\": true\n        }\n    },\n    {\n        \"styleName\": \"FM_chFigureTitle\",\n        \"mode\": 1,\n        \"description\": \"Figure Header\",\n        \"styles\": {\n            \"align\": \"left\",\n            \"boldNumbering\": true,\n            \"boldSentence\": false,\n            \"fontName\": \"Arial\",\n            \"fontSize\": \"11\",\n            \"paragraphSpacingBefore\": \"1\",\n            \"paragraphSpacingAfter\": \"3\",\n            \"boldPartial\": true\n        }\n    },\n    {\n        \"styleName\": \"FM_chpara0\",\n        \"mode\": 1,\n        \"description\": \"Paragraph Header level 1\",\n        \"styles\": {\n            \"align\": \"left\",\n            \"boldNumbering\": true,\n            \"boldSentence\": true,\n            \"fontName\": \"Arial\",\n            \"fontSize\": \"12\",\n            \"boldPartial\": true,\n            \"paragraphSpacingBefore\": \"3\",\n            \"paragraphSpacingAfter\": \"3\",\n            \"styleLevel\": \"2\",\n            \"hasNumbering\": true\n        }\n    },\n    {\n        \"styleName\": \"FM_chsubpara1\",\n        \"mode\": 1,\n        \"description\": \"Paragraph hader level 3\",\n        \"styles\": {\n            \"align\": \"left\",\n            \"boldNumbering\": true,\n            \"boldSentence\": true,\n            \"fontName\": \"Arial\",\n            \"fontSize\": \"12\",\n            \"paragraphSpacingBefore\": \"4\",\n            \"paragraphSpacingAfter\": \"4\",\n            \"styleLevel\": \"3\",\n            \"hasNumbering\": true,\n            \"indent\": \"1\",\n            \"boldPartial\": true\n        }\n    },\n    {\n        \"styleName\": \"FM_chsubpara2\",\n        \"mode\": 1,\n        \"description\": \"Paragraph Header Level 4\",\n        \"styles\": {\n            \"align\": \"left\",\n            \"boldNumbering\": true,\n            \"boldSentence\": true,\n            \"fontName\": \"Arial\",\n            \"fontSize\": \"12\",\n            \"paragraphSpacingBefore\": \"2\",\n            \"paragraphSpacingAfter\": \"3\",\n            \"styleLevel\": \"4\",\n            \"hasNumbering\": true,\n            \"indent\": \"2\"\n        }\n    },\n    {\n        \"styleName\": \"FM_chsubpara3\",\n        \"mode\": 0,\n        \"styles\": {\n            \"align\": \"left\",\n            \"boldNumbering\": true,\n            \"boldSentence\": true,\n            \"fontName\": \"Arial\",\n            \"fontSize\": \"12\",\n            \"paragraphSpacingBefore\": \"4\",\n            \"paragraphSpacingAfter\": \"4\",\n            \"styleLevel\": \"5\",\n            \"hasNumbering\": true,\n            \"indent\": \"3\"\n        },\n        \"description\": \"Paragraph header level 5\"\n    },\n    {\n        \"styleName\": \"FM_chsubpara4\",\n        \"mode\": 1,\n        \"description\": \"Paragraph header level 6\",\n        \"styles\": {\n            \"align\": \"left\",\n            \"boldNumbering\": true,\n            \"boldSentence\": true,\n            \"fontName\": \"Arial\",\n            \"fontSize\": \"12\",\n            \"paragraphSpacingBefore\": \"4\",\n            \"paragraphSpacingAfter\": \"4\",\n            \"styleLevel\": \"6\",\n            \"hasNumbering\": true,\n            \"indent\": \"4\"\n        }\n    },\n    {\n        \"styleName\": \"FM_chTableTitle\",\n        \"mode\": 0,\n        \"styles\": {\n            \"align\": \"left\",\n            \"boldNumbering\": true,\n            \"boldSentence\": false,\n            \"fontName\": \"Arial\",\n            \"fontSize\": \"11\",\n            \"boldPartial\": true,\n            \"paragraphSpacingBefore\": \"1\",\n            \"paragraphSpacingAfter\": \"3\"\n        },\n        \"description\": \"Table Header\"\n    },\n    {\n        \"styleName\": \"FM_i_bullet_0\",\n        \"mode\": 1,\n        \"description\": \"Bullet item level 0\",\n        \"styles\": {\n            \"align\": \"left\",\n            \"boldNumbering\": true,\n            \"boldSentence\": true,\n            \"paragraphSpacingBefore\": \"3\",\n            \"paragraphSpacingAfter\": \"3\",\n            \"fontName\": \"Arial\",\n            \"fontSize\": \"11\"\n        }\n    },\n    {\n        \"styleName\": \"FM_i_bullet_1\",\n        \"mode\": 0,\n        \"styles\": {\n            \"align\": \"left\",\n            \"boldNumbering\": true,\n            \"boldSentence\": true,\n            \"fontName\": \"Arial\",\n            \"fontSize\": \"11\",\n            \"paragraphSpacingBefore\": \"3\",\n            \"paragraphSpacingAfter\": \"3\",\n            \"indent\": \"1\"\n        },\n        \"description\": \"Bullet item level 1\"\n    },\n    {\n        \"styleName\": \"FM_i_bullet_2\",\n        \"mode\": 1,\n        \"description\": \"Bullet item level 2\",\n        \"styles\": {\n            \"align\": \"left\",\n            \"boldNumbering\": true,\n            \"boldSentence\": true,\n            \"fontName\": \"Arial\",\n            \"fontSize\": \"11\",\n            \"paragraphSpacingBefore\": \"3\",\n            \"paragraphSpacingAfter\": \"3\",\n            \"indent\": \"2\"\n        }\n    },\n    {\n        \"styleName\": \"FM_i_bullet_3\",\n        \"mode\": 0,\n        \"styles\": {\n            \"align\": \"left\",\n            \"boldNumbering\": true,\n            \"boldSentence\": true,\n            \"fontName\": \"Arial\",\n            \"fontSize\": \"11\",\n            \"paragraphSpacingBefore\": \"3\",\n            \"paragraphSpacingAfter\": \"3\",\n            \"indent\": \"3\"\n        },\n        \"description\": \"Bullet item level 3\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "/savecustomstyle",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"styleName\": \"Test_Style_1\",\r\n        \"mode\": 1,\r\n        \"description\": \"Chapter Header\",\r\n        \"styles\": {\r\n            \"align\": \"left\",\r\n            \"boldNumbering\": true,\r\n            \"boldSentence\": true,\r\n            \"fontName\": \"Arial\",\r\n            \"fontSize\": \"12\",\r\n            \"strong\": true,\r\n            \"paragraphSpacingBefore\": \"0\",\r\n            \"paragraphSpacingAfter\": \"4\",\r\n            \"styleLevel\": \"1\",\r\n            \"hasNumbering\": true\r\n        }\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{endpoint}}/savecustomstyle",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"savecustomstyle"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "/savecustomstyle",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n        \"styleName\": \"FM_chapterTitle\",\r\n        \"mode\": 1,\r\n        \"description\": \"Chapter Header\",\r\n        \"styles\": {\r\n            \"align\": \"left\",\r\n            \"boldNumbering\": true,\r\n            \"boldSentence\": true,\r\n            \"fontName\": \"Arial\",\r\n            \"fontSize\": \"12\",\r\n            \"strong\": true,\r\n            \"paragraphSpacingBefore\": \"0\",\r\n            \"paragraphSpacingAfter\": \"4\",\r\n            \"styleLevel\": \"1\",\r\n            \"hasNumbering\": true\r\n        }\r\n    }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{endpoint}}/savecustomstyle",
+									"host": [
+										"{{endpoint}}"
+									],
+									"path": [
+										"savecustomstyle"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"c98-l8UKWSs5Q2prffx9kcNRwraQDNk\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 30 Jan 2021 15:35:49 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"styleName\": \"FM_chapterTitle\",\n        \"mode\": 1,\n        \"description\": \"Chapter Header\",\n        \"styles\": {\n            \"align\": \"left\",\n            \"boldNumbering\": true,\n            \"boldSentence\": true,\n            \"fontName\": \"Arial\",\n            \"fontSize\": \"12\",\n            \"strong\": true,\n            \"paragraphSpacingBefore\": \"0\",\n            \"paragraphSpacingAfter\": \"4\",\n            \"styleLevel\": \"1\",\n            \"hasNumbering\": true\n        }\n    },\n    {\n        \"styleName\": \"FM_chFigureTitle\",\n        \"mode\": 1,\n        \"description\": \"Figure Header\",\n        \"styles\": {\n            \"align\": \"left\",\n            \"boldNumbering\": true,\n            \"boldSentence\": false,\n            \"fontName\": \"Arial\",\n            \"fontSize\": \"11\",\n            \"paragraphSpacingBefore\": \"1\",\n            \"paragraphSpacingAfter\": \"3\",\n            \"boldPartial\": true\n        }\n    },\n    {\n        \"styleName\": \"FM_chpara0\",\n        \"mode\": 1,\n        \"description\": \"Paragraph Header level 1\",\n        \"styles\": {\n            \"align\": \"left\",\n            \"boldNumbering\": true,\n            \"boldSentence\": true,\n            \"fontName\": \"Arial\",\n            \"fontSize\": \"12\",\n            \"boldPartial\": true,\n            \"paragraphSpacingBefore\": \"3\",\n            \"paragraphSpacingAfter\": \"3\",\n            \"styleLevel\": \"2\",\n            \"hasNumbering\": true\n        }\n    },\n    {\n        \"styleName\": \"FM_chsubpara1\",\n        \"mode\": 1,\n        \"description\": \"Paragraph hader level 3\",\n        \"styles\": {\n            \"align\": \"left\",\n            \"boldNumbering\": true,\n            \"boldSentence\": true,\n            \"fontName\": \"Arial\",\n            \"fontSize\": \"12\",\n            \"paragraphSpacingBefore\": \"4\",\n            \"paragraphSpacingAfter\": \"4\",\n            \"styleLevel\": \"3\",\n            \"hasNumbering\": true,\n            \"indent\": \"1\",\n            \"boldPartial\": true\n        }\n    },\n    {\n        \"styleName\": \"FM_chsubpara2\",\n        \"mode\": 1,\n        \"description\": \"Paragraph Header Level 4\",\n        \"styles\": {\n            \"align\": \"left\",\n            \"boldNumbering\": true,\n            \"boldSentence\": true,\n            \"fontName\": \"Arial\",\n            \"fontSize\": \"12\",\n            \"paragraphSpacingBefore\": \"2\",\n            \"paragraphSpacingAfter\": \"3\",\n            \"styleLevel\": \"4\",\n            \"hasNumbering\": true,\n            \"indent\": \"2\"\n        }\n    },\n    {\n        \"styleName\": \"FM_chsubpara3\",\n        \"mode\": 0,\n        \"styles\": {\n            \"align\": \"left\",\n            \"boldNumbering\": true,\n            \"boldSentence\": true,\n            \"fontName\": \"Arial\",\n            \"fontSize\": \"12\",\n            \"paragraphSpacingBefore\": \"4\",\n            \"paragraphSpacingAfter\": \"4\",\n            \"styleLevel\": \"5\",\n            \"hasNumbering\": true,\n            \"indent\": \"3\"\n        },\n        \"description\": \"Paragraph header level 5\"\n    },\n    {\n        \"styleName\": \"FM_chsubpara4\",\n        \"mode\": 1,\n        \"description\": \"Paragraph header level 6\",\n        \"styles\": {\n            \"align\": \"left\",\n            \"boldNumbering\": true,\n            \"boldSentence\": true,\n            \"fontName\": \"Arial\",\n            \"fontSize\": \"12\",\n            \"paragraphSpacingBefore\": \"4\",\n            \"paragraphSpacingAfter\": \"4\",\n            \"styleLevel\": \"6\",\n            \"hasNumbering\": true,\n            \"indent\": \"4\"\n        }\n    },\n    {\n        \"styleName\": \"FM_chTableTitle\",\n        \"mode\": 0,\n        \"styles\": {\n            \"align\": \"left\",\n            \"boldNumbering\": true,\n            \"boldSentence\": false,\n            \"fontName\": \"Arial\",\n            \"fontSize\": \"11\",\n            \"boldPartial\": true,\n            \"paragraphSpacingBefore\": \"1\",\n            \"paragraphSpacingAfter\": \"3\"\n        },\n        \"description\": \"Table Header\"\n    },\n    {\n        \"styleName\": \"FM_i_bullet_0\",\n        \"mode\": 1,\n        \"description\": \"Bullet item level 0\",\n        \"styles\": {\n            \"align\": \"left\",\n            \"boldNumbering\": true,\n            \"boldSentence\": true,\n            \"paragraphSpacingBefore\": \"3\",\n            \"paragraphSpacingAfter\": \"3\",\n            \"fontName\": \"Arial\",\n            \"fontSize\": \"11\"\n        }\n    },\n    {\n        \"styleName\": \"FM_i_bullet_1\",\n        \"mode\": 0,\n        \"styles\": {\n            \"align\": \"left\",\n            \"boldNumbering\": true,\n            \"boldSentence\": true,\n            \"fontName\": \"Arial\",\n            \"fontSize\": \"11\",\n            \"paragraphSpacingBefore\": \"3\",\n            \"paragraphSpacingAfter\": \"3\",\n            \"indent\": \"1\"\n        },\n        \"description\": \"Bullet item level 1\"\n    },\n    {\n        \"styleName\": \"FM_i_bullet_2\",\n        \"mode\": 1,\n        \"description\": \"Bullet item level 2\",\n        \"styles\": {\n            \"align\": \"left\",\n            \"boldNumbering\": true,\n            \"boldSentence\": true,\n            \"fontName\": \"Arial\",\n            \"fontSize\": \"11\",\n            \"paragraphSpacingBefore\": \"3\",\n            \"paragraphSpacingAfter\": \"3\",\n            \"indent\": \"2\"\n        }\n    },\n    {\n        \"styleName\": \"FM_i_bullet_3\",\n        \"mode\": 0,\n        \"styles\": {\n            \"align\": \"left\",\n            \"boldNumbering\": true,\n            \"boldSentence\": true,\n            \"fontName\": \"Arial\",\n            \"fontSize\": \"11\",\n            \"paragraphSpacingBefore\": \"3\",\n            \"paragraphSpacingAfter\": \"3\",\n            \"indent\": \"3\"\n        },\n        \"description\": \"Bullet item level 3\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "/renamecustomstyle",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"styleName\": \"Test_Style_1\",\r\n    \"newName\": \"Test_Style_2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{endpoint}}/renamecustomstyle",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"renamecustomstyle"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "/renamecustomstyle",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"styleName\": \"Test_Style_1\",\r\n    \"newName\": \"Test_Style_2\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{endpoint}}/renamecustomstyle",
+									"host": [
+										"{{endpoint}}"
+									],
+									"path": [
+										"renamecustomstyle"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"daf-nyC4k0AMRy1bM66nVkkajEt/Qks\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 30 Jan 2021 16:01:32 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"styleName\": \"FM_chapterTitle\",\n        \"mode\": 1,\n        \"description\": \"Chapter Header\",\n        \"styles\": {\n            \"align\": \"left\",\n            \"boldNumbering\": true,\n            \"boldSentence\": true,\n            \"fontName\": \"Arial\",\n            \"fontSize\": \"12\",\n            \"strong\": true,\n            \"paragraphSpacingBefore\": \"0\",\n            \"paragraphSpacingAfter\": \"4\",\n            \"styleLevel\": \"1\",\n            \"hasNumbering\": true\n        }\n    },\n    {\n        \"styleName\": \"FM_chFigureTitle\",\n        \"mode\": 1,\n        \"description\": \"Figure Header\",\n        \"styles\": {\n            \"align\": \"left\",\n            \"boldNumbering\": true,\n            \"boldSentence\": false,\n            \"fontName\": \"Arial\",\n            \"fontSize\": \"11\",\n            \"paragraphSpacingBefore\": \"1\",\n            \"paragraphSpacingAfter\": \"3\",\n            \"boldPartial\": true\n        }\n    },\n    {\n        \"styleName\": \"FM_chpara0\",\n        \"mode\": 1,\n        \"description\": \"Paragraph Header level 1\",\n        \"styles\": {\n            \"align\": \"left\",\n            \"boldNumbering\": true,\n            \"boldSentence\": true,\n            \"fontName\": \"Arial\",\n            \"fontSize\": \"12\",\n            \"boldPartial\": true,\n            \"paragraphSpacingBefore\": \"3\",\n            \"paragraphSpacingAfter\": \"3\",\n            \"styleLevel\": \"2\",\n            \"hasNumbering\": true\n        }\n    },\n    {\n        \"styleName\": \"FM_chsubpara1\",\n        \"mode\": 1,\n        \"description\": \"Paragraph hader level 3\",\n        \"styles\": {\n            \"align\": \"left\",\n            \"boldNumbering\": true,\n            \"boldSentence\": true,\n            \"fontName\": \"Arial\",\n            \"fontSize\": \"12\",\n            \"paragraphSpacingBefore\": \"4\",\n            \"paragraphSpacingAfter\": \"4\",\n            \"styleLevel\": \"3\",\n            \"hasNumbering\": true,\n            \"indent\": \"1\",\n            \"boldPartial\": true\n        }\n    },\n    {\n        \"styleName\": \"FM_chsubpara2\",\n        \"mode\": 1,\n        \"description\": \"Paragraph Header Level 4\",\n        \"styles\": {\n            \"align\": \"left\",\n            \"boldNumbering\": true,\n            \"boldSentence\": true,\n            \"fontName\": \"Arial\",\n            \"fontSize\": \"12\",\n            \"paragraphSpacingBefore\": \"2\",\n            \"paragraphSpacingAfter\": \"3\",\n            \"styleLevel\": \"4\",\n            \"hasNumbering\": true,\n            \"indent\": \"2\"\n        }\n    },\n    {\n        \"styleName\": \"FM_chsubpara3\",\n        \"mode\": 0,\n        \"styles\": {\n            \"align\": \"left\",\n            \"boldNumbering\": true,\n            \"boldSentence\": true,\n            \"fontName\": \"Arial\",\n            \"fontSize\": \"12\",\n            \"paragraphSpacingBefore\": \"4\",\n            \"paragraphSpacingAfter\": \"4\",\n            \"styleLevel\": \"5\",\n            \"hasNumbering\": true,\n            \"indent\": \"3\"\n        },\n        \"description\": \"Paragraph header level 5\"\n    },\n    {\n        \"styleName\": \"FM_chsubpara4\",\n        \"mode\": 1,\n        \"description\": \"Paragraph header level 6\",\n        \"styles\": {\n            \"align\": \"left\",\n            \"boldNumbering\": true,\n            \"boldSentence\": true,\n            \"fontName\": \"Arial\",\n            \"fontSize\": \"12\",\n            \"paragraphSpacingBefore\": \"4\",\n            \"paragraphSpacingAfter\": \"4\",\n            \"styleLevel\": \"6\",\n            \"hasNumbering\": true,\n            \"indent\": \"4\"\n        }\n    },\n    {\n        \"styleName\": \"FM_chTableTitle\",\n        \"mode\": 0,\n        \"styles\": {\n            \"align\": \"left\",\n            \"boldNumbering\": true,\n            \"boldSentence\": false,\n            \"fontName\": \"Arial\",\n            \"fontSize\": \"11\",\n            \"boldPartial\": true,\n            \"paragraphSpacingBefore\": \"1\",\n            \"paragraphSpacingAfter\": \"3\"\n        },\n        \"description\": \"Table Header\"\n    },\n    {\n        \"styleName\": \"FM_i_bullet_0\",\n        \"mode\": 1,\n        \"description\": \"Bullet item level 0\",\n        \"styles\": {\n            \"align\": \"left\",\n            \"boldNumbering\": true,\n            \"boldSentence\": true,\n            \"paragraphSpacingBefore\": \"3\",\n            \"paragraphSpacingAfter\": \"3\",\n            \"fontName\": \"Arial\",\n            \"fontSize\": \"11\"\n        }\n    },\n    {\n        \"styleName\": \"FM_i_bullet_1\",\n        \"mode\": 0,\n        \"styles\": {\n            \"align\": \"left\",\n            \"boldNumbering\": true,\n            \"boldSentence\": true,\n            \"fontName\": \"Arial\",\n            \"fontSize\": \"11\",\n            \"paragraphSpacingBefore\": \"3\",\n            \"paragraphSpacingAfter\": \"3\",\n            \"indent\": \"1\"\n        },\n        \"description\": \"Bullet item level 1\"\n    },\n    {\n        \"styleName\": \"FM_i_bullet_2\",\n        \"mode\": 1,\n        \"description\": \"Bullet item level 2\",\n        \"styles\": {\n            \"align\": \"left\",\n            \"boldNumbering\": true,\n            \"boldSentence\": true,\n            \"fontName\": \"Arial\",\n            \"fontSize\": \"11\",\n            \"paragraphSpacingBefore\": \"3\",\n            \"paragraphSpacingAfter\": \"3\",\n            \"indent\": \"2\"\n        }\n    },\n    {\n        \"styleName\": \"FM_i_bullet_3\",\n        \"mode\": 0,\n        \"styles\": {\n            \"align\": \"left\",\n            \"boldNumbering\": true,\n            \"boldSentence\": true,\n            \"fontName\": \"Arial\",\n            \"fontSize\": \"11\",\n            \"paragraphSpacingBefore\": \"3\",\n            \"paragraphSpacingAfter\": \"3\",\n            \"indent\": \"3\"\n        },\n        \"description\": \"Bullet item level 3\"\n    },\n    {\n        \"styleName\": \"Test_Style_2\",\n        \"mode\": 1,\n        \"description\": \"Chapter Header\",\n        \"styles\": {\n            \"align\": \"left\",\n            \"boldNumbering\": true,\n            \"boldSentence\": true,\n            \"fontName\": \"Arial\",\n            \"fontSize\": \"12\",\n            \"strong\": true,\n            \"paragraphSpacingBefore\": \"0\",\n            \"paragraphSpacingAfter\": \"4\",\n            \"styleLevel\": \"1\",\n            \"hasNumbering\": true\n        }\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "/removecustomstyle",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "Test_Style_2"
+						},
+						"url": {
+							"raw": "{{endpoint}}/removecustomstyle",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"removecustomstyle"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "/removecustomstyle",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "Test_Style_2"
+								},
+								"url": {
+									"raw": "{{endpoint}}/removecustomstyle",
+									"host": [
+										"{{endpoint}}"
+									],
+									"path": [
+										"removecustomstyle"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"c98-l8UKWSs5Q2prffx9kcNRwraQDNk\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 30 Jan 2021 16:03:20 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"styleName\": \"FM_chapterTitle\",\n        \"mode\": 1,\n        \"description\": \"Chapter Header\",\n        \"styles\": {\n            \"align\": \"left\",\n            \"boldNumbering\": true,\n            \"boldSentence\": true,\n            \"fontName\": \"Arial\",\n            \"fontSize\": \"12\",\n            \"strong\": true,\n            \"paragraphSpacingBefore\": \"0\",\n            \"paragraphSpacingAfter\": \"4\",\n            \"styleLevel\": \"1\",\n            \"hasNumbering\": true\n        }\n    },\n    {\n        \"styleName\": \"FM_chFigureTitle\",\n        \"mode\": 1,\n        \"description\": \"Figure Header\",\n        \"styles\": {\n            \"align\": \"left\",\n            \"boldNumbering\": true,\n            \"boldSentence\": false,\n            \"fontName\": \"Arial\",\n            \"fontSize\": \"11\",\n            \"paragraphSpacingBefore\": \"1\",\n            \"paragraphSpacingAfter\": \"3\",\n            \"boldPartial\": true\n        }\n    },\n    {\n        \"styleName\": \"FM_chpara0\",\n        \"mode\": 1,\n        \"description\": \"Paragraph Header level 1\",\n        \"styles\": {\n            \"align\": \"left\",\n            \"boldNumbering\": true,\n            \"boldSentence\": true,\n            \"fontName\": \"Arial\",\n            \"fontSize\": \"12\",\n            \"boldPartial\": true,\n            \"paragraphSpacingBefore\": \"3\",\n            \"paragraphSpacingAfter\": \"3\",\n            \"styleLevel\": \"2\",\n            \"hasNumbering\": true\n        }\n    },\n    {\n        \"styleName\": \"FM_chsubpara1\",\n        \"mode\": 1,\n        \"description\": \"Paragraph hader level 3\",\n        \"styles\": {\n            \"align\": \"left\",\n            \"boldNumbering\": true,\n            \"boldSentence\": true,\n            \"fontName\": \"Arial\",\n            \"fontSize\": \"12\",\n            \"paragraphSpacingBefore\": \"4\",\n            \"paragraphSpacingAfter\": \"4\",\n            \"styleLevel\": \"3\",\n            \"hasNumbering\": true,\n            \"indent\": \"1\",\n            \"boldPartial\": true\n        }\n    },\n    {\n        \"styleName\": \"FM_chsubpara2\",\n        \"mode\": 1,\n        \"description\": \"Paragraph Header Level 4\",\n        \"styles\": {\n            \"align\": \"left\",\n            \"boldNumbering\": true,\n            \"boldSentence\": true,\n            \"fontName\": \"Arial\",\n            \"fontSize\": \"12\",\n            \"paragraphSpacingBefore\": \"2\",\n            \"paragraphSpacingAfter\": \"3\",\n            \"styleLevel\": \"4\",\n            \"hasNumbering\": true,\n            \"indent\": \"2\"\n        }\n    },\n    {\n        \"styleName\": \"FM_chsubpara3\",\n        \"mode\": 0,\n        \"styles\": {\n            \"align\": \"left\",\n            \"boldNumbering\": true,\n            \"boldSentence\": true,\n            \"fontName\": \"Arial\",\n            \"fontSize\": \"12\",\n            \"paragraphSpacingBefore\": \"4\",\n            \"paragraphSpacingAfter\": \"4\",\n            \"styleLevel\": \"5\",\n            \"hasNumbering\": true,\n            \"indent\": \"3\"\n        },\n        \"description\": \"Paragraph header level 5\"\n    },\n    {\n        \"styleName\": \"FM_chsubpara4\",\n        \"mode\": 1,\n        \"description\": \"Paragraph header level 6\",\n        \"styles\": {\n            \"align\": \"left\",\n            \"boldNumbering\": true,\n            \"boldSentence\": true,\n            \"fontName\": \"Arial\",\n            \"fontSize\": \"12\",\n            \"paragraphSpacingBefore\": \"4\",\n            \"paragraphSpacingAfter\": \"4\",\n            \"styleLevel\": \"6\",\n            \"hasNumbering\": true,\n            \"indent\": \"4\"\n        }\n    },\n    {\n        \"styleName\": \"FM_chTableTitle\",\n        \"mode\": 0,\n        \"styles\": {\n            \"align\": \"left\",\n            \"boldNumbering\": true,\n            \"boldSentence\": false,\n            \"fontName\": \"Arial\",\n            \"fontSize\": \"11\",\n            \"boldPartial\": true,\n            \"paragraphSpacingBefore\": \"1\",\n            \"paragraphSpacingAfter\": \"3\"\n        },\n        \"description\": \"Table Header\"\n    },\n    {\n        \"styleName\": \"FM_i_bullet_0\",\n        \"mode\": 1,\n        \"description\": \"Bullet item level 0\",\n        \"styles\": {\n            \"align\": \"left\",\n            \"boldNumbering\": true,\n            \"boldSentence\": true,\n            \"paragraphSpacingBefore\": \"3\",\n            \"paragraphSpacingAfter\": \"3\",\n            \"fontName\": \"Arial\",\n            \"fontSize\": \"11\"\n        }\n    },\n    {\n        \"styleName\": \"FM_i_bullet_1\",\n        \"mode\": 0,\n        \"styles\": {\n            \"align\": \"left\",\n            \"boldNumbering\": true,\n            \"boldSentence\": true,\n            \"fontName\": \"Arial\",\n            \"fontSize\": \"11\",\n            \"paragraphSpacingBefore\": \"3\",\n            \"paragraphSpacingAfter\": \"3\",\n            \"indent\": \"1\"\n        },\n        \"description\": \"Bullet item level 1\"\n    },\n    {\n        \"styleName\": \"FM_i_bullet_2\",\n        \"mode\": 1,\n        \"description\": \"Bullet item level 2\",\n        \"styles\": {\n            \"align\": \"left\",\n            \"boldNumbering\": true,\n            \"boldSentence\": true,\n            \"fontName\": \"Arial\",\n            \"fontSize\": \"11\",\n            \"paragraphSpacingBefore\": \"3\",\n            \"paragraphSpacingAfter\": \"3\",\n            \"indent\": \"2\"\n        }\n    },\n    {\n        \"styleName\": \"FM_i_bullet_3\",\n        \"mode\": 0,\n        \"styles\": {\n            \"align\": \"left\",\n            \"boldNumbering\": true,\n            \"boldSentence\": true,\n            \"fontName\": \"Arial\",\n            \"fontSize\": \"11\",\n            \"paragraphSpacingBefore\": \"3\",\n            \"paragraphSpacingAfter\": \"3\",\n            \"indent\": \"3\"\n        },\n        \"description\": \"Bullet item level 3\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "/bulk-export",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/bulk-export",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"bulk-export"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "/bulk-export",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{endpoint}}/bulk-export",
+									"host": [
+										"{{endpoint}}"
+									],
+									"path": [
+										"bulk-export"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"d67-TrilspB8TRorQ9eUpr87KGtY5vQ\""
+								},
+								{
+									"key": "Vary",
+									"value": "Accept-Encoding"
+								},
+								{
+									"key": "Content-Encoding",
+									"value": "gzip"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 30 Jan 2021 16:04:14 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"styles\": {\n        \"fm_chaptertitle\": {\n            \"styleName\": \"FM_chapterTitle\",\n            \"mode\": 1,\n            \"description\": \"Chapter Header\",\n            \"styles\": {\n                \"align\": \"left\",\n                \"boldNumbering\": true,\n                \"boldSentence\": true,\n                \"fontName\": \"Arial\",\n                \"fontSize\": \"12\",\n                \"strong\": true,\n                \"paragraphSpacingBefore\": \"0\",\n                \"paragraphSpacingAfter\": \"4\",\n                \"styleLevel\": \"1\",\n                \"hasNumbering\": true\n            }\n        },\n        \"fm_chfiguretitle\": {\n            \"styleName\": \"FM_chFigureTitle\",\n            \"mode\": 1,\n            \"description\": \"Figure Header\",\n            \"styles\": {\n                \"align\": \"left\",\n                \"boldNumbering\": true,\n                \"boldSentence\": false,\n                \"fontName\": \"Arial\",\n                \"fontSize\": \"11\",\n                \"paragraphSpacingBefore\": \"1\",\n                \"paragraphSpacingAfter\": \"3\",\n                \"boldPartial\": true\n            }\n        },\n        \"fm_chpara0\": {\n            \"styleName\": \"FM_chpara0\",\n            \"mode\": 1,\n            \"description\": \"Paragraph Header level 1\",\n            \"styles\": {\n                \"align\": \"left\",\n                \"boldNumbering\": true,\n                \"boldSentence\": true,\n                \"fontName\": \"Arial\",\n                \"fontSize\": \"12\",\n                \"boldPartial\": true,\n                \"paragraphSpacingBefore\": \"3\",\n                \"paragraphSpacingAfter\": \"3\",\n                \"styleLevel\": \"2\",\n                \"hasNumbering\": true\n            }\n        },\n        \"fm_chsubpara1\": {\n            \"styleName\": \"FM_chsubpara1\",\n            \"mode\": 1,\n            \"description\": \"Paragraph hader level 3\",\n            \"styles\": {\n                \"align\": \"left\",\n                \"boldNumbering\": true,\n                \"boldSentence\": true,\n                \"fontName\": \"Arial\",\n                \"fontSize\": \"12\",\n                \"paragraphSpacingBefore\": \"4\",\n                \"paragraphSpacingAfter\": \"4\",\n                \"styleLevel\": \"3\",\n                \"hasNumbering\": true,\n                \"indent\": \"1\",\n                \"boldPartial\": true\n            }\n        },\n        \"fm_chsubpara2\": {\n            \"styleName\": \"FM_chsubpara2\",\n            \"mode\": 1,\n            \"description\": \"Paragraph Header Level 4\",\n            \"styles\": {\n                \"align\": \"left\",\n                \"boldNumbering\": true,\n                \"boldSentence\": true,\n                \"fontName\": \"Arial\",\n                \"fontSize\": \"12\",\n                \"paragraphSpacingBefore\": \"2\",\n                \"paragraphSpacingAfter\": \"3\",\n                \"styleLevel\": \"4\",\n                \"hasNumbering\": true,\n                \"indent\": \"2\"\n            }\n        },\n        \"fm_chsubpara3\": {\n            \"styleName\": \"FM_chsubpara3\",\n            \"mode\": 0,\n            \"styles\": {\n                \"align\": \"left\",\n                \"boldNumbering\": true,\n                \"boldSentence\": true,\n                \"fontName\": \"Arial\",\n                \"fontSize\": \"12\",\n                \"paragraphSpacingBefore\": \"4\",\n                \"paragraphSpacingAfter\": \"4\",\n                \"styleLevel\": \"5\",\n                \"hasNumbering\": true,\n                \"indent\": \"3\"\n            },\n            \"description\": \"Paragraph header level 5\"\n        },\n        \"fm_chsubpara4\": {\n            \"styleName\": \"FM_chsubpara4\",\n            \"mode\": 1,\n            \"description\": \"Paragraph header level 6\",\n            \"styles\": {\n                \"align\": \"left\",\n                \"boldNumbering\": true,\n                \"boldSentence\": true,\n                \"fontName\": \"Arial\",\n                \"fontSize\": \"12\",\n                \"paragraphSpacingBefore\": \"4\",\n                \"paragraphSpacingAfter\": \"4\",\n                \"styleLevel\": \"6\",\n                \"hasNumbering\": true,\n                \"indent\": \"4\"\n            }\n        },\n        \"fm_chtabletitle\": {\n            \"styleName\": \"FM_chTableTitle\",\n            \"mode\": 0,\n            \"styles\": {\n                \"align\": \"left\",\n                \"boldNumbering\": true,\n                \"boldSentence\": false,\n                \"fontName\": \"Arial\",\n                \"fontSize\": \"11\",\n                \"boldPartial\": true,\n                \"paragraphSpacingBefore\": \"1\",\n                \"paragraphSpacingAfter\": \"3\"\n            },\n            \"description\": \"Table Header\"\n        },\n        \"fm_i_bullet_0\": {\n            \"styleName\": \"FM_i_bullet_0\",\n            \"mode\": 1,\n            \"description\": \"Bullet item level 0\",\n            \"styles\": {\n                \"align\": \"left\",\n                \"boldNumbering\": true,\n                \"boldSentence\": true,\n                \"paragraphSpacingBefore\": \"3\",\n                \"paragraphSpacingAfter\": \"3\",\n                \"fontName\": \"Arial\",\n                \"fontSize\": \"11\"\n            }\n        },\n        \"fm_i_bullet_1\": {\n            \"styleName\": \"FM_i_bullet_1\",\n            \"mode\": 0,\n            \"styles\": {\n                \"align\": \"left\",\n                \"boldNumbering\": true,\n                \"boldSentence\": true,\n                \"fontName\": \"Arial\",\n                \"fontSize\": \"11\",\n                \"paragraphSpacingBefore\": \"3\",\n                \"paragraphSpacingAfter\": \"3\",\n                \"indent\": \"1\"\n            },\n            \"description\": \"Bullet item level 1\"\n        },\n        \"fm_i_bullet_2\": {\n            \"styleName\": \"FM_i_bullet_2\",\n            \"mode\": 1,\n            \"description\": \"Bullet item level 2\",\n            \"styles\": {\n                \"align\": \"left\",\n                \"boldNumbering\": true,\n                \"boldSentence\": true,\n                \"fontName\": \"Arial\",\n                \"fontSize\": \"11\",\n                \"paragraphSpacingBefore\": \"3\",\n                \"paragraphSpacingAfter\": \"3\",\n                \"indent\": \"2\"\n            }\n        },\n        \"fm_i_bullet_3\": {\n            \"styleName\": \"FM_i_bullet_3\",\n            \"mode\": 0,\n            \"styles\": {\n                \"align\": \"left\",\n                \"boldNumbering\": true,\n                \"boldSentence\": true,\n                \"fontName\": \"Arial\",\n                \"fontSize\": \"11\",\n                \"paragraphSpacingBefore\": \"3\",\n                \"paragraphSpacingAfter\": \"3\",\n                \"indent\": \"3\"\n            },\n            \"description\": \"Bullet item level 3\"\n        }\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "/styles/import",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n    \"replace\": false,\r\n    \"styles\": [\r\n        {\r\n            \"styleName\": \"FM_chapterTitle\",\r\n            \"mode\": 1,\r\n            \"description\": \"Chapter Header\",\r\n            \"styles\": {\r\n                \"align\": \"left\",\r\n                \"boldNumbering\": true,\r\n                \"boldSentence\": true,\r\n                \"fontName\": \"Arial\",\r\n                \"fontSize\": \"12\",\r\n                \"strong\": true,\r\n                \"paragraphSpacingBefore\": \"0\",\r\n                \"paragraphSpacingAfter\": \"4\",\r\n                \"styleLevel\": \"1\",\r\n                \"hasNumbering\": true\r\n            }\r\n        },\r\n        {\r\n            \"styleName\": \"FM_chFigureTitle\",\r\n            \"mode\": 1,\r\n            \"description\": \"Figure Header\",\r\n            \"styles\": {\r\n                \"align\": \"left\",\r\n                \"boldNumbering\": true,\r\n                \"boldSentence\": false,\r\n                \"fontName\": \"Arial\",\r\n                \"fontSize\": \"11\",\r\n                \"paragraphSpacingBefore\": \"1\",\r\n                \"paragraphSpacingAfter\": \"3\",\r\n                \"boldPartial\": true\r\n            }\r\n        },\r\n        {\r\n            \"styleName\": \"FM_chpara0\",\r\n            \"mode\": 1,\r\n            \"description\": \"Paragraph Header level 1\",\r\n            \"styles\": {\r\n                \"align\": \"left\",\r\n                \"boldNumbering\": true,\r\n                \"boldSentence\": true,\r\n                \"fontName\": \"Arial\",\r\n                \"fontSize\": \"12\",\r\n                \"boldPartial\": true,\r\n                \"paragraphSpacingBefore\": \"3\",\r\n                \"paragraphSpacingAfter\": \"3\",\r\n                \"styleLevel\": \"2\",\r\n                \"hasNumbering\": true\r\n            }\r\n        },\r\n        {\r\n            \"styleName\": \"FM_chsubpara1\",\r\n            \"mode\": 1,\r\n            \"description\": \"Paragraph hader level 3\",\r\n            \"styles\": {\r\n                \"align\": \"left\",\r\n                \"boldNumbering\": true,\r\n                \"boldSentence\": true,\r\n                \"fontName\": \"Arial\",\r\n                \"fontSize\": \"12\",\r\n                \"paragraphSpacingBefore\": \"4\",\r\n                \"paragraphSpacingAfter\": \"4\",\r\n                \"styleLevel\": \"3\",\r\n                \"hasNumbering\": true,\r\n                \"indent\": \"1\",\r\n                \"boldPartial\": true\r\n            }\r\n        },\r\n        {\r\n            \"styleName\": \"FM_chsubpara2\",\r\n            \"mode\": 1,\r\n            \"description\": \"Paragraph Header Level 4\",\r\n            \"styles\": {\r\n                \"align\": \"left\",\r\n                \"boldNumbering\": true,\r\n                \"boldSentence\": true,\r\n                \"fontName\": \"Arial\",\r\n                \"fontSize\": \"12\",\r\n                \"paragraphSpacingBefore\": \"2\",\r\n                \"paragraphSpacingAfter\": \"3\",\r\n                \"styleLevel\": \"4\",\r\n                \"hasNumbering\": true,\r\n                \"indent\": \"2\"\r\n            }\r\n        },\r\n        {\r\n            \"styleName\": \"FM_chsubpara3\",\r\n            \"mode\": 0,\r\n            \"styles\": {\r\n                \"align\": \"left\",\r\n                \"boldNumbering\": true,\r\n                \"boldSentence\": true,\r\n                \"fontName\": \"Arial\",\r\n                \"fontSize\": \"12\",\r\n                \"paragraphSpacingBefore\": \"4\",\r\n                \"paragraphSpacingAfter\": \"4\",\r\n                \"styleLevel\": \"5\",\r\n                \"hasNumbering\": true,\r\n                \"indent\": \"3\"\r\n            },\r\n            \"description\": \"Paragraph header level 5\"\r\n        },\r\n        {\r\n            \"styleName\": \"FM_chsubpara4\",\r\n            \"mode\": 1,\r\n            \"description\": \"Paragraph header level 6\",\r\n            \"styles\": {\r\n                \"align\": \"left\",\r\n                \"boldNumbering\": true,\r\n                \"boldSentence\": true,\r\n                \"fontName\": \"Arial\",\r\n                \"fontSize\": \"12\",\r\n                \"paragraphSpacingBefore\": \"4\",\r\n                \"paragraphSpacingAfter\": \"4\",\r\n                \"styleLevel\": \"6\",\r\n                \"hasNumbering\": true,\r\n                \"indent\": \"4\"\r\n            }\r\n        },\r\n        {\r\n            \"styleName\": \"FM_chTableTitle\",\r\n            \"mode\": 0,\r\n            \"styles\": {\r\n                \"align\": \"left\",\r\n                \"boldNumbering\": true,\r\n                \"boldSentence\": false,\r\n                \"fontName\": \"Arial\",\r\n                \"fontSize\": \"11\",\r\n                \"boldPartial\": true,\r\n                \"paragraphSpacingBefore\": \"1\",\r\n                \"paragraphSpacingAfter\": \"3\"\r\n            },\r\n            \"description\": \"Table Header\"\r\n        },\r\n        {\r\n            \"styleName\": \"FM_i_bullet_0\",\r\n            \"mode\": 1,\r\n            \"description\": \"Bullet item level 0\",\r\n            \"styles\": {\r\n                \"align\": \"left\",\r\n                \"boldNumbering\": true,\r\n                \"boldSentence\": true,\r\n                \"paragraphSpacingBefore\": \"3\",\r\n                \"paragraphSpacingAfter\": \"3\",\r\n                \"fontName\": \"Arial\",\r\n                \"fontSize\": \"11\"\r\n            }\r\n        },\r\n        {\r\n            \"styleName\": \"FM_i_bullet_1\",\r\n            \"mode\": 0,\r\n            \"styles\": {\r\n                \"align\": \"left\",\r\n                \"boldNumbering\": true,\r\n                \"boldSentence\": true,\r\n                \"fontName\": \"Arial\",\r\n                \"fontSize\": \"11\",\r\n                \"paragraphSpacingBefore\": \"3\",\r\n                \"paragraphSpacingAfter\": \"3\",\r\n                \"indent\": \"1\"\r\n            },\r\n            \"description\": \"Bullet item level 1\"\r\n        },\r\n        {\r\n            \"styleName\": \"FM_i_bullet_2\",\r\n            \"mode\": 1,\r\n            \"description\": \"Bullet item level 2\",\r\n            \"styles\": {\r\n                \"align\": \"left\",\r\n                \"boldNumbering\": true,\r\n                \"boldSentence\": true,\r\n                \"fontName\": \"Arial\",\r\n                \"fontSize\": \"11\",\r\n                \"paragraphSpacingBefore\": \"3\",\r\n                \"paragraphSpacingAfter\": \"3\",\r\n                \"indent\": \"2\"\r\n            }\r\n        },\r\n        {\r\n            \"styleName\": \"FM_i_bullet_3\",\r\n            \"mode\": 0,\r\n            \"styles\": {\r\n                \"align\": \"left\",\r\n                \"boldNumbering\": true,\r\n                \"boldSentence\": true,\r\n                \"fontName\": \"Arial\",\r\n                \"fontSize\": \"11\",\r\n                \"paragraphSpacingBefore\": \"3\",\r\n                \"paragraphSpacingAfter\": \"3\",\r\n                \"indent\": \"3\"\r\n            },\r\n            \"description\": \"Bullet item level 3\"\r\n        }\r\n    ] \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{endpoint}}/styles/import",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"styles",
+						"import"
+					]
+				},
+				"description": "Saves set of styles to collection"
+			},
+			"response": [
+				{
+					"name": "/styles/import",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"replace\": false,\r\n    \"styles\": [\r\n        {\r\n            \"styleName\": \"FM_chapterTitle\",\r\n            \"mode\": 1,\r\n            \"description\": \"Chapter Header\",\r\n            \"styles\": {\r\n                \"align\": \"left\",\r\n                \"boldNumbering\": true,\r\n                \"boldSentence\": true,\r\n                \"fontName\": \"Arial\",\r\n                \"fontSize\": \"12\",\r\n                \"strong\": true,\r\n                \"paragraphSpacingBefore\": \"0\",\r\n                \"paragraphSpacingAfter\": \"4\",\r\n                \"styleLevel\": \"1\",\r\n                \"hasNumbering\": true\r\n            }\r\n        },\r\n        {\r\n            \"styleName\": \"FM_chFigureTitle\",\r\n            \"mode\": 1,\r\n            \"description\": \"Figure Header\",\r\n            \"styles\": {\r\n                \"align\": \"left\",\r\n                \"boldNumbering\": true,\r\n                \"boldSentence\": false,\r\n                \"fontName\": \"Arial\",\r\n                \"fontSize\": \"11\",\r\n                \"paragraphSpacingBefore\": \"1\",\r\n                \"paragraphSpacingAfter\": \"3\",\r\n                \"boldPartial\": true\r\n            }\r\n        },\r\n        {\r\n            \"styleName\": \"FM_chpara0\",\r\n            \"mode\": 1,\r\n            \"description\": \"Paragraph Header level 1\",\r\n            \"styles\": {\r\n                \"align\": \"left\",\r\n                \"boldNumbering\": true,\r\n                \"boldSentence\": true,\r\n                \"fontName\": \"Arial\",\r\n                \"fontSize\": \"12\",\r\n                \"boldPartial\": true,\r\n                \"paragraphSpacingBefore\": \"3\",\r\n                \"paragraphSpacingAfter\": \"3\",\r\n                \"styleLevel\": \"2\",\r\n                \"hasNumbering\": true\r\n            }\r\n        },\r\n        {\r\n            \"styleName\": \"FM_chsubpara1\",\r\n            \"mode\": 1,\r\n            \"description\": \"Paragraph hader level 3\",\r\n            \"styles\": {\r\n                \"align\": \"left\",\r\n                \"boldNumbering\": true,\r\n                \"boldSentence\": true,\r\n                \"fontName\": \"Arial\",\r\n                \"fontSize\": \"12\",\r\n                \"paragraphSpacingBefore\": \"4\",\r\n                \"paragraphSpacingAfter\": \"4\",\r\n                \"styleLevel\": \"3\",\r\n                \"hasNumbering\": true,\r\n                \"indent\": \"1\",\r\n                \"boldPartial\": true\r\n            }\r\n        },\r\n        {\r\n            \"styleName\": \"FM_chsubpara2\",\r\n            \"mode\": 1,\r\n            \"description\": \"Paragraph Header Level 4\",\r\n            \"styles\": {\r\n                \"align\": \"left\",\r\n                \"boldNumbering\": true,\r\n                \"boldSentence\": true,\r\n                \"fontName\": \"Arial\",\r\n                \"fontSize\": \"12\",\r\n                \"paragraphSpacingBefore\": \"2\",\r\n                \"paragraphSpacingAfter\": \"3\",\r\n                \"styleLevel\": \"4\",\r\n                \"hasNumbering\": true,\r\n                \"indent\": \"2\"\r\n            }\r\n        },\r\n        {\r\n            \"styleName\": \"FM_chsubpara3\",\r\n            \"mode\": 0,\r\n            \"styles\": {\r\n                \"align\": \"left\",\r\n                \"boldNumbering\": true,\r\n                \"boldSentence\": true,\r\n                \"fontName\": \"Arial\",\r\n                \"fontSize\": \"12\",\r\n                \"paragraphSpacingBefore\": \"4\",\r\n                \"paragraphSpacingAfter\": \"4\",\r\n                \"styleLevel\": \"5\",\r\n                \"hasNumbering\": true,\r\n                \"indent\": \"3\"\r\n            },\r\n            \"description\": \"Paragraph header level 5\"\r\n        },\r\n        {\r\n            \"styleName\": \"FM_chsubpara4\",\r\n            \"mode\": 1,\r\n            \"description\": \"Paragraph header level 6\",\r\n            \"styles\": {\r\n                \"align\": \"left\",\r\n                \"boldNumbering\": true,\r\n                \"boldSentence\": true,\r\n                \"fontName\": \"Arial\",\r\n                \"fontSize\": \"12\",\r\n                \"paragraphSpacingBefore\": \"4\",\r\n                \"paragraphSpacingAfter\": \"4\",\r\n                \"styleLevel\": \"6\",\r\n                \"hasNumbering\": true,\r\n                \"indent\": \"4\"\r\n            }\r\n        },\r\n        {\r\n            \"styleName\": \"FM_chTableTitle\",\r\n            \"mode\": 0,\r\n            \"styles\": {\r\n                \"align\": \"left\",\r\n                \"boldNumbering\": true,\r\n                \"boldSentence\": false,\r\n                \"fontName\": \"Arial\",\r\n                \"fontSize\": \"11\",\r\n                \"boldPartial\": true,\r\n                \"paragraphSpacingBefore\": \"1\",\r\n                \"paragraphSpacingAfter\": \"3\"\r\n            },\r\n            \"description\": \"Table Header\"\r\n        },\r\n        {\r\n            \"styleName\": \"FM_i_bullet_0\",\r\n            \"mode\": 1,\r\n            \"description\": \"Bullet item level 0\",\r\n            \"styles\": {\r\n                \"align\": \"left\",\r\n                \"boldNumbering\": true,\r\n                \"boldSentence\": true,\r\n                \"paragraphSpacingBefore\": \"3\",\r\n                \"paragraphSpacingAfter\": \"3\",\r\n                \"fontName\": \"Arial\",\r\n                \"fontSize\": \"11\"\r\n            }\r\n        },\r\n        {\r\n            \"styleName\": \"FM_i_bullet_1\",\r\n            \"mode\": 0,\r\n            \"styles\": {\r\n                \"align\": \"left\",\r\n                \"boldNumbering\": true,\r\n                \"boldSentence\": true,\r\n                \"fontName\": \"Arial\",\r\n                \"fontSize\": \"11\",\r\n                \"paragraphSpacingBefore\": \"3\",\r\n                \"paragraphSpacingAfter\": \"3\",\r\n                \"indent\": \"1\"\r\n            },\r\n            \"description\": \"Bullet item level 1\"\r\n        },\r\n        {\r\n            \"styleName\": \"FM_i_bullet_2\",\r\n            \"mode\": 1,\r\n            \"description\": \"Bullet item level 2\",\r\n            \"styles\": {\r\n                \"align\": \"left\",\r\n                \"boldNumbering\": true,\r\n                \"boldSentence\": true,\r\n                \"fontName\": \"Arial\",\r\n                \"fontSize\": \"11\",\r\n                \"paragraphSpacingBefore\": \"3\",\r\n                \"paragraphSpacingAfter\": \"3\",\r\n                \"indent\": \"2\"\r\n            }\r\n        },\r\n        {\r\n            \"styleName\": \"FM_i_bullet_3\",\r\n            \"mode\": 0,\r\n            \"styles\": {\r\n                \"align\": \"left\",\r\n                \"boldNumbering\": true,\r\n                \"boldSentence\": true,\r\n                \"fontName\": \"Arial\",\r\n                \"fontSize\": \"11\",\r\n                \"paragraphSpacingBefore\": \"3\",\r\n                \"paragraphSpacingAfter\": \"3\",\r\n                \"indent\": \"3\"\r\n            },\r\n            \"description\": \"Bullet item level 3\"\r\n        }\r\n    ] \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{endpoint}}/styles/import",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"styles",
+								"import"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"a-bAsFyilMr4Ra1hIU5PyoyFRunpI\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 30 Jan 2021 15:31:03 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "/styles",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{endpoint}}/styles",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"styles"
+					]
+				},
+				"description": "Fetch styles using new REST api"
+			},
+			"response": [
+				{
+					"name": "GET /styles",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/styles",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"styles"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"c98-l8UKWSs5Q2prffx9kcNRwraQDNk\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Content-Encoding",
+							"value": "gzip"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 30 Jan 2021 15:33:17 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"styleName\": \"FM_chapterTitle\",\n        \"mode\": 1,\n        \"description\": \"Chapter Header\",\n        \"styles\": {\n            \"align\": \"left\",\n            \"boldNumbering\": true,\n            \"boldSentence\": true,\n            \"fontName\": \"Arial\",\n            \"fontSize\": \"12\",\n            \"strong\": true,\n            \"paragraphSpacingBefore\": \"0\",\n            \"paragraphSpacingAfter\": \"4\",\n            \"styleLevel\": \"1\",\n            \"hasNumbering\": true\n        }\n    },\n    {\n        \"styleName\": \"FM_chFigureTitle\",\n        \"mode\": 1,\n        \"description\": \"Figure Header\",\n        \"styles\": {\n            \"align\": \"left\",\n            \"boldNumbering\": true,\n            \"boldSentence\": false,\n            \"fontName\": \"Arial\",\n            \"fontSize\": \"11\",\n            \"paragraphSpacingBefore\": \"1\",\n            \"paragraphSpacingAfter\": \"3\",\n            \"boldPartial\": true\n        }\n    },\n    {\n        \"styleName\": \"FM_chpara0\",\n        \"mode\": 1,\n        \"description\": \"Paragraph Header level 1\",\n        \"styles\": {\n            \"align\": \"left\",\n            \"boldNumbering\": true,\n            \"boldSentence\": true,\n            \"fontName\": \"Arial\",\n            \"fontSize\": \"12\",\n            \"boldPartial\": true,\n            \"paragraphSpacingBefore\": \"3\",\n            \"paragraphSpacingAfter\": \"3\",\n            \"styleLevel\": \"2\",\n            \"hasNumbering\": true\n        }\n    },\n    {\n        \"styleName\": \"FM_chsubpara1\",\n        \"mode\": 1,\n        \"description\": \"Paragraph hader level 3\",\n        \"styles\": {\n            \"align\": \"left\",\n            \"boldNumbering\": true,\n            \"boldSentence\": true,\n            \"fontName\": \"Arial\",\n            \"fontSize\": \"12\",\n            \"paragraphSpacingBefore\": \"4\",\n            \"paragraphSpacingAfter\": \"4\",\n            \"styleLevel\": \"3\",\n            \"hasNumbering\": true,\n            \"indent\": \"1\",\n            \"boldPartial\": true\n        }\n    },\n    {\n        \"styleName\": \"FM_chsubpara2\",\n        \"mode\": 1,\n        \"description\": \"Paragraph Header Level 4\",\n        \"styles\": {\n            \"align\": \"left\",\n            \"boldNumbering\": true,\n            \"boldSentence\": true,\n            \"fontName\": \"Arial\",\n            \"fontSize\": \"12\",\n            \"paragraphSpacingBefore\": \"2\",\n            \"paragraphSpacingAfter\": \"3\",\n            \"styleLevel\": \"4\",\n            \"hasNumbering\": true,\n            \"indent\": \"2\"\n        }\n    },\n    {\n        \"styleName\": \"FM_chsubpara3\",\n        \"mode\": 0,\n        \"styles\": {\n            \"align\": \"left\",\n            \"boldNumbering\": true,\n            \"boldSentence\": true,\n            \"fontName\": \"Arial\",\n            \"fontSize\": \"12\",\n            \"paragraphSpacingBefore\": \"4\",\n            \"paragraphSpacingAfter\": \"4\",\n            \"styleLevel\": \"5\",\n            \"hasNumbering\": true,\n            \"indent\": \"3\"\n        },\n        \"description\": \"Paragraph header level 5\"\n    },\n    {\n        \"styleName\": \"FM_chsubpara4\",\n        \"mode\": 1,\n        \"description\": \"Paragraph header level 6\",\n        \"styles\": {\n            \"align\": \"left\",\n            \"boldNumbering\": true,\n            \"boldSentence\": true,\n            \"fontName\": \"Arial\",\n            \"fontSize\": \"12\",\n            \"paragraphSpacingBefore\": \"4\",\n            \"paragraphSpacingAfter\": \"4\",\n            \"styleLevel\": \"6\",\n            \"hasNumbering\": true,\n            \"indent\": \"4\"\n        }\n    },\n    {\n        \"styleName\": \"FM_chTableTitle\",\n        \"mode\": 0,\n        \"styles\": {\n            \"align\": \"left\",\n            \"boldNumbering\": true,\n            \"boldSentence\": false,\n            \"fontName\": \"Arial\",\n            \"fontSize\": \"11\",\n            \"boldPartial\": true,\n            \"paragraphSpacingBefore\": \"1\",\n            \"paragraphSpacingAfter\": \"3\"\n        },\n        \"description\": \"Table Header\"\n    },\n    {\n        \"styleName\": \"FM_i_bullet_0\",\n        \"mode\": 1,\n        \"description\": \"Bullet item level 0\",\n        \"styles\": {\n            \"align\": \"left\",\n            \"boldNumbering\": true,\n            \"boldSentence\": true,\n            \"paragraphSpacingBefore\": \"3\",\n            \"paragraphSpacingAfter\": \"3\",\n            \"fontName\": \"Arial\",\n            \"fontSize\": \"11\"\n        }\n    },\n    {\n        \"styleName\": \"FM_i_bullet_1\",\n        \"mode\": 0,\n        \"styles\": {\n            \"align\": \"left\",\n            \"boldNumbering\": true,\n            \"boldSentence\": true,\n            \"fontName\": \"Arial\",\n            \"fontSize\": \"11\",\n            \"paragraphSpacingBefore\": \"3\",\n            \"paragraphSpacingAfter\": \"3\",\n            \"indent\": \"1\"\n        },\n        \"description\": \"Bullet item level 1\"\n    },\n    {\n        \"styleName\": \"FM_i_bullet_2\",\n        \"mode\": 1,\n        \"description\": \"Bullet item level 2\",\n        \"styles\": {\n            \"align\": \"left\",\n            \"boldNumbering\": true,\n            \"boldSentence\": true,\n            \"fontName\": \"Arial\",\n            \"fontSize\": \"11\",\n            \"paragraphSpacingBefore\": \"3\",\n            \"paragraphSpacingAfter\": \"3\",\n            \"indent\": \"2\"\n        }\n    },\n    {\n        \"styleName\": \"FM_i_bullet_3\",\n        \"mode\": 0,\n        \"styles\": {\n            \"align\": \"left\",\n            \"boldNumbering\": true,\n            \"boldSentence\": true,\n            \"fontName\": \"Arial\",\n            \"fontSize\": \"11\",\n            \"paragraphSpacingBefore\": \"3\",\n            \"paragraphSpacingAfter\": \"3\",\n            \"indent\": \"3\"\n        },\n        \"description\": \"Bullet item level 3\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "/styles/:styleName",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{endpoint}}/styles/test_style_1",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"styles",
+						"test_style_1"
+					]
+				},
+				"description": "Gets single style by name (key)"
+			},
+			"response": [
+				{
+					"name": "/styles/:styleName",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/styles/test_style_1",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"styles",
+								"test_style_1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "278"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"116-9v5+mdrjuA3uxUBfKoFXAOZEnaA\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 30 Jan 2021 15:45:20 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"styleName\": \"Test_Style_1\",\n    \"mode\": 1,\n    \"description\": \"Chapter Header\",\n    \"styles\": {\n        \"align\": \"left\",\n        \"boldNumbering\": true,\n        \"boldSentence\": true,\n        \"fontName\": \"Arial\",\n        \"fontSize\": \"12\",\n        \"strong\": true,\n        \"paragraphSpacingBefore\": \"0\",\n        \"paragraphSpacingAfter\": \"4\",\n        \"styleLevel\": \"1\",\n        \"hasNumbering\": true\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "/styles",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"styleName\": \"Test_Style_1\",\r\n    \"mode\": 1,\r\n    \"description\": \"Chapter Header\",\r\n    \"styles\": {\r\n        \"align\": \"left\",\r\n        \"boldNumbering\": true,\r\n        \"boldSentence\": true,\r\n        \"fontName\": \"Arial\",\r\n        \"fontSize\": \"12\",\r\n        \"strong\": true,\r\n        \"paragraphSpacingBefore\": \"0\",\r\n        \"paragraphSpacingAfter\": \"4\",\r\n        \"styleLevel\": \"1\",\r\n        \"hasNumbering\": true\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{endpoint}}/styles",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"styles"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "/styles",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"styleName\": \"Test_Style_1\",\r\n    \"mode\": 1,\r\n    \"description\": \"Chapter Header\",\r\n    \"styles\": {\r\n        \"align\": \"left\",\r\n        \"boldNumbering\": true,\r\n        \"boldSentence\": true,\r\n        \"fontName\": \"Arial\",\r\n        \"fontSize\": \"12\",\r\n        \"strong\": true,\r\n        \"paragraphSpacingBefore\": \"0\",\r\n        \"paragraphSpacingAfter\": \"4\",\r\n        \"styleLevel\": \"1\",\r\n        \"hasNumbering\": true\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{endpoint}}/styles",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"styles"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Location",
+							"value": "/styles/test_style_1"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "72"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"48-tgrqZbO5lI+fG9GTifz2ZPe81bo\""
+						},
+						{
+							"key": "Vary",
+							"value": "Accept-Encoding"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 30 Jan 2021 15:49:26 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"statusCode\": 201,\n    \"message\": \"Created\",\n    \"location\": \"/styles/test_style_1\"\n}"
+				}
+			]
+		},
+		{
+			"name": "/styles/rename",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"oldName\": \"Test_Style_1\",\r\n    \"newName\": \"Test_Style_2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{endpoint}}/styles/rename",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"styles",
+						"rename"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "/styles/rename",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"oldName\": \"Test_Style_1\",\r\n    \"newName\": \"Test_Style_2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{endpoint}}/styles/rename",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"styles",
+								"rename"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"a-bAsFyilMr4Ra1hIU5PyoyFRunpI\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 30 Jan 2021 15:51:56 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "/styles/:styleName",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{endpoint}}/styles/test_style_2",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"styles",
+						"test_style_2"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "/styles/:styleName",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/styles/test_style_2",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"styles",
+								"test_style_2"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"a-bAsFyilMr4Ra1hIU5PyoyFRunpI\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 30 Jan 2021 15:54:27 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		},
+		{
+			"name": "/styles/clear  !WARNING!",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "{{endpoint}}/styles/clear",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"styles",
+						"clear"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "/styles/clear",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/styles/clear",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"styles",
+								"clear"
+							]
+						}
+					},
+					"status": "No Content",
+					"code": 204,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"a-bAsFyilMr4Ra1hIU5PyoyFRunpI\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 30 Jan 2021 16:08:27 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": null
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "endpoint",
+			"value": "http://localhost:3000"
+		}
+	]
+}

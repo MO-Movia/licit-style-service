@@ -25,7 +25,6 @@ export default function compatabiity(styles: Styles): Router {
   });
 
   route.post('/removecustomstyle/', (req, res) => {
-    console.log('body', req.body);
     styles.delete(req.body);
     res.json(styles.list());
   });

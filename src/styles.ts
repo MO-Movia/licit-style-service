@@ -1,6 +1,7 @@
 import { resolve, join } from 'path';
 import { readFile, writeFile } from 'fs/promises';
 import type { Style } from './style';
+import { logger } from './logger';
 
 /**
  * Name of save file
@@ -115,11 +116,13 @@ export class Styles {
     // Start with an empty list
     this.styles.clear();
     try {
+      logger.debug(`Reading ${this.fileName}`);
       const json = await readFile(this.fileName, 'utf-8');
       // No need to clear list a second time.
       this.merge(JSON.parse(json), false);
+      logger.debug(`Read ${this.styles.size} styles from disk.`);
     } catch (err) {
-      console.warn(`Failed to read "${this.fileName}".`);
+      logger.warn(`Failed to read "${this.fileName}".`);
     } finally {
       this.keys = Array.from(this.styles.keys()).sort(this.sorter);
       // No need to save file that was just read
@@ -129,7 +132,10 @@ export class Styles {
     // Start save timer
     dirtyTimer = dirtyTimer * 1000;
     if (dirtyTimer) {
+      logger.debug(`Setting dirty timer for ${dirtyTimer} ms.`);
       this.saver = setInterval(this.save.bind(this), dirtyTimer);
+    } else {
+      logger.debug(`Not setting dirty timer.`);
     }
   }
 
@@ -219,9 +225,10 @@ export class Styles {
       const styles = Array.from(this.styles.values());
       const json = JSON.stringify(styles, null, 2);
       try {
-        await writeFile(this.fileName, json);
+        await writeFile(this.fileName, json, 'utf-8');
+        logger.debug(`Wrote ${styles.length} styles to disk.`);
       } catch (err) {
-        console.error(`Failed to write "${this.fileName}".\n${err}`);
+        logger.error(`Failed to write "${this.fileName}".\n${err}`);
       } finally {
         // While not the best approach, assume that current write wiil never
         // succeed.  Rather than filling the log with error after error, every
