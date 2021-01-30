@@ -5,6 +5,7 @@ import cors from 'cors';
 import api from './api';
 import { Styles } from './styles';
 import compatabiity from './compatability';
+import { logger, loggerMiddleware } from './logger';
 
 //  Allow environment to change default behavior
 const dataRoot = process.env.DATA_ROOT || '/app/data';
@@ -16,6 +17,7 @@ export const styles = new Styles(dataRoot);
 // Configure express.
 export const app = express();
 // Add midleware for cors and compression.
+app.use(loggerMiddleware);
 app.use(cors());
 app.options('*', cors());
 app.use(compression());
@@ -28,11 +30,11 @@ app.use(compatabiity(styles));
 // for a graceful shutdown.
 export const server = http.createServer(app);
 export const stop = async () => {
-  console.log('Beginning shutdown.');
+  logger.info('Beginning shutdown.');
   server.close(async () => {
     // Make sure any lingering changes are saved to disk.
     await styles.flush();
-    console.log('Shutdown complete.');
+    logger.info('Shutdown complete.');
   });
 };
 
@@ -49,7 +51,7 @@ export async function start() {
 
   // Start the HTTP server.
   server.listen(port, () => {
-    console.log(`Listening on port ${port}`);
+    logger.info(`Listening on port ${port}`);
   });
 }
 

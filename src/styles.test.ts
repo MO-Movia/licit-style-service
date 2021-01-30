@@ -7,6 +7,7 @@ import { SinonSpy, SinonStub, spy, stub } from 'sinon';
 
 import { Styles } from './styles';
 import { Style } from './style';
+import { logger } from './logger';
 
 describe('Styles', () => {
   const styleName = 'oldName';
@@ -64,7 +65,7 @@ describe('Styles', () => {
     let save: SinonSpy;
 
     beforeEach(() => {
-      error = stub(console, 'error');
+      error = stub(logger, 'error');
       save = spy<any, 'save'>(styles, 'save');
     });
 

@@ -1,7 +1,7 @@
 import { Request, Response, Router } from 'express';
+import bodyParser from 'body-parser';
 import type { Styles } from './styles';
 import type { Style } from './style';
-import bodyParser from 'body-parser';
 
 export default function api(styles: Styles): Router {
   const route = Router();
@@ -157,7 +157,6 @@ export default function api(styles: Styles): Router {
   // Any other errors should be reported via JSON.
   route.use((err, req, res, next) => {
     let { message, statusCode } = err;
-    console.log(message);
     statusCode = statusCode || 400;
     res.status(statusCode).json({ statusCode, message });
   });
