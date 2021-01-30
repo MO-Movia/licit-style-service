@@ -1,9 +1,13 @@
 import { Request, Response, Router } from 'express';
 import type { Styles } from './styles';
 import type { Style } from './style';
+import bodyParser from 'body-parser';
 
 export default function api(styles: Styles): Router {
   const route = Router();
+
+  // Methods below require json body
+  route.use(bodyParser.json());
 
   // POST /styles
   // REQUEST BODY = (Style instance)
@@ -19,7 +23,12 @@ export default function api(styles: Styles): Router {
   //    Location: /styles/my-style
   route.post('/', (req: Request<Style>, res: Response) => {
     const key = styles.set(req.body);
-    return res.location(`${req.baseUrl}/${key}`).sendStatus(201);
+    const location = `${req.baseUrl}/${key}`;
+    return res.location(location).status(201).json({
+      statusCode: 201,
+      message: 'Created',
+      location,
+    });
   });
 
   // GET /styles
@@ -148,6 +157,7 @@ export default function api(styles: Styles): Router {
   // Any other errors should be reported via JSON.
   route.use((err, req, res, next) => {
     let { message, statusCode } = err;
+    console.log(message);
     statusCode = statusCode || 400;
     res.status(statusCode).json({ statusCode, message });
   });
