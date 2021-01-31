@@ -63,7 +63,7 @@
       "src/**/*.ts"
     ],
     "reporter": [
-      "cobertura",
+      "lcov-only",
       "html"
     ]
   },
