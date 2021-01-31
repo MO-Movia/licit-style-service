@@ -63,7 +63,7 @@
       "src/**/*.ts"
     ],
     "reporter": [
-      "text",
+      "cobertura",
       "html"
     ]
   },
