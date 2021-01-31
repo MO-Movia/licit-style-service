@@ -1,4 +1,4 @@
-import express, { Router, Express } from 'express';
+import express, { Express } from 'express';
 import { tmpdir } from 'os';
 import supertest from 'supertest';
 import { Styles } from './styles';
@@ -24,10 +24,7 @@ describe('compatability', () => {
 
   describe('GET /getcustomstyles/', () => {
     it('should respond with 200 and list of styles', (done) => {
-      supertest(app)
-        .get('/getcustomstyles/')
-        .expect(200)
-        .end(done);
+      supertest(app).get('/getcustomstyles/').expect(200).end(done);
     });
   });
 
@@ -69,10 +66,7 @@ describe('compatability', () => {
   describe('GET /bulk-export', () => {
     describe('when request is well formed', () => {
       it('should respond with 200', (done) => {
-        supertest(app)
-          .get('/bulk-export')
-          .expect(200)
-          .end(done);
+        supertest(app).get('/bulk-export').expect(200).end(done);
       });
     });
   });
@@ -82,7 +76,7 @@ describe('compatability', () => {
       it('should respond with 200', (done) => {
         supertest(app)
           .post('/bulk-import')
-          .send({styles: {}, relpace: true})
+          .send({ styles: {}, relpace: true })
           .expect(200)
           .end(done);
       });
@@ -91,7 +85,7 @@ describe('compatability', () => {
       it('should respond with 200', (done) => {
         supertest(app)
           .post('/bulk-import')
-          .send({styles: [], relpace: true})
+          .send({ styles: [], relpace: true })
           .expect(200)
           .end(done);
       });

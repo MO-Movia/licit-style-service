@@ -9,16 +9,28 @@ import { Styles } from './styles';
 import { Style } from './style';
 import { logger } from './logger';
 
+/**
+ * Test harnes for Styles
+ */
+class TestStyles extends Styles {
+  // make public for testing save failures.
+  public fileName: string;
+  // make public for testing save failures.
+  public save(): Promise<void> {
+    return super.save();
+  }
+}
+
 describe('Styles', () => {
   const styleName = 'oldName';
   const newName = 'newName';
-  let styles: Styles;
+  let styles: TestStyles;
   let style: Style;
 
   beforeEach(async () => {
     // Create a new style instance and add a single item
     style = { styleName };
-    styles = new Styles(tmpdir());
+    styles = new TestStyles(tmpdir());
     styles.set(style);
   });
 
@@ -66,7 +78,7 @@ describe('Styles', () => {
 
     beforeEach(() => {
       error = stub(logger, 'error');
-      save = spy<any, 'save'>(styles, 'save');
+      save = spy(styles, 'save');
     });
 
     afterEach(() => {
@@ -88,7 +100,7 @@ describe('Styles', () => {
       // Testing the underlying behavior o
       it('should log the faiure', async () => {
         // hack the style into an invalid state
-        (styles as any).fileName = null;
+        styles.fileName = null;
 
         await styles.flush();
 
@@ -125,7 +137,7 @@ describe('Styles', () => {
     describe('when file does not exist', () => {
       it('should init styles to empty list', async () => {
         // Make sure file does not exist.
-        await unlink(styles.fileName).catch(err => 1);
+        await unlink(styles.fileName).catch(() => 1);
 
         await styles.init(0);
 

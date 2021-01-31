@@ -38,7 +38,7 @@ export default function compatabiity(styles: Styles): Router {
   }
 
   route.get('/bulk-export', (req, res) => {
-    res.json({ styles: map()});
+    res.json({ styles: map() });
   });
 
   route.post('/bulk-import', (req, res) => {
@@ -47,7 +47,7 @@ export default function compatabiity(styles: Styles): Router {
     } else {
       styles.merge(Object.values(req.body.styles), req.body.replace);
     }
-    res.json({ styles: map()});
+    res.json({ styles: map() });
   });
 
   return route;

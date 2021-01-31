@@ -16,7 +16,7 @@ export class Styles {
    * Fully qualified path to file where styles are saved to disk.
    * Exposed for testing purposes.
    */
-  readonly fileName: string;
+  protected fileName: string;
 
   /**
    * Sorted list of style keys.
@@ -122,7 +122,7 @@ export class Styles {
       this.merge(JSON.parse(json), false);
       logger.debug(`Read ${this.styles.size} styles from disk.`);
     } catch (err) {
-      logger.warn(`Failed to read "${this.fileName}".`);
+      logger.warn(`Failed to read "${this.fileName}".\n${err}`);
     } finally {
       this.keys = Array.from(this.styles.keys()).sort(this.sorter);
       // No need to save file that was just read
@@ -145,7 +145,7 @@ export class Styles {
    * @returns transformed value
    * @throws error if styleName is falsy
    */
-  key(styleName: string, argName: string = 'styleName'): string {
+  key(styleName: string, argName = 'styleName'): string {
     if (!styleName) {
       throw this.badArgument(argName);
     }
@@ -219,7 +219,7 @@ export class Styles {
    *
    * @returns Promise resolved on completion.
    */
-  private async save(): Promise<void> {
+  protected async save(): Promise<void> {
     const keys = this.keys;
     if (this.saved !== keys) {
       const styles = Array.from(this.styles.values());

@@ -155,10 +155,11 @@ export default function api(styles: Styles): Router {
   });
 
   // Any other errors should be reported via JSON.
+  // 4 parameters required for express error handler.
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   route.use((err, req, res, next) => {
-    let { message, statusCode } = err;
-    statusCode = statusCode || 400;
-    res.status(statusCode).json({ statusCode, message });
+    const statusCode = err.statusCode || 400;
+    res.status(statusCode).json({ statusCode, message: err.message });
   });
 
   return route;

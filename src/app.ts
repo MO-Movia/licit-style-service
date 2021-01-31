@@ -29,19 +29,21 @@ app.use(compatabiity(styles));
 // Createh the HTTP server and configure
 // for a graceful shutdown.
 export const server = http.createServer(app);
-export const stop = async () => {
+export const stop = async (): Promise<void> => {
   logger.info('Beginning shutdown.');
-  server.close(async () => {
-    // Make sure any lingering changes are saved to disk.
-    await styles.flush();
-    logger.info('Shutdown complete.');
-  });
+  server.close(
+    async (): Promise<void> => {
+      // Make sure any lingering changes are saved to disk.
+      await styles.flush();
+      logger.info('Shutdown complete.');
+    }
+  );
 };
 
 /**
  * Main method for the application
  */
-export async function start() {
+export async function start(): Promise<void> {
   // Wait for style data to load.
   await styles.init(saveSeconds);
 

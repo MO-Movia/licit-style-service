@@ -12,7 +12,6 @@ export interface Style {
   description?: string;
 
   styles?: {
-
     align?: string;
 
     boldNumbering?: boolean;

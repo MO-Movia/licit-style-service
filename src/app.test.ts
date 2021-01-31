@@ -10,7 +10,7 @@ describe('app', () => {
   describe('shutdown', () => {
     it('should close the server', async () => {
       // Execute the callback as well.
-      const faked = fake(fn => fn());
+      const faked = fake((fn) => fn());
       replace(server, 'close', faked);
 
       await stop();

@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import express, { Router, Express } from 'express';
+import express, { Express } from 'express';
 import { tmpdir } from 'os';
 import supertest from 'supertest';
 import api from './api';
@@ -11,7 +11,6 @@ describe('api', () => {
   const style = { styleName };
 
   let styles: Styles;
-  let router: Router;
   let app: Express;
 
   beforeEach(() => {
@@ -35,7 +34,7 @@ describe('api', () => {
         .expect({
           statusCode: 201,
           message: 'Created',
-          location: '/styles/stylename'
+          location: '/styles/stylename',
         })
         .end(done);
     });
@@ -82,7 +81,7 @@ describe('api', () => {
         supertest(app)
           .delete(`/styles/${styleName}`)
           .expect(204)
-          .expect((res) => {
+          .expect(() => {
             expect(styles.get(styleName)).to.be.undefined;
           })
           .end(done);
@@ -104,7 +103,7 @@ describe('api', () => {
           .set('Content-Type', 'application/json')
           .send({ oldName: styleName, newName })
           .expect(204)
-          .expect((res) => {
+          .expect(() => {
             expect(style.styleName).to.equal(newName);
             expect(styles.get(newName)).to.equal(style);
           })
@@ -133,7 +132,7 @@ describe('api', () => {
       supertest(app)
         .patch('/styles/clear')
         .expect(204)
-        .expect((res) => {
+        .expect(() => {
           expect(styles.get(styleName)).to.be.undefined;
         })
         .end(done);
