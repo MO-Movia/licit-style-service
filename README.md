@@ -52,7 +52,7 @@ The above docker command will not persist styles if the container is destroyed. 
 
 ## REST endpoint
 
-The service exposes the following rest endpoints. See comments in api.ts for additional information.
+The service exposes the following rest endpoints. See comments in api.ts for additional information.  A [Postman Collection](./postman_collection.json) is included with some sample requests.
 
 ### `GET /styles`
 
@@ -205,7 +205,7 @@ Renames an existing style.
 
 ### `POST /removecustomstyle/`
 
-Removes an esisting style.
+Removes an existing style.
 
 ---
 
