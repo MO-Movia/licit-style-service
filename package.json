@@ -63,7 +63,8 @@
       "src/**/*.ts"
     ],
     "reporter": [
-      "text",
+      "lcovonly",
+      "text-summary",
       "html"
     ]
   },
