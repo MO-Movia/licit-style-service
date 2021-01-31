@@ -10,14 +10,14 @@
 Reference service for serving styles to licit editor
 
 ## Build / Run
-While it can be built and run locally, the project is desinged to be run in a docker container.
+While it can be built and run locally, the project is designed to be run in a docker container.
 
 ### Environment Variables
 NAME|DEFAULT VALUE|DESCRIPTION
 ---|---|---
 HTTP_PORT|3000|The HTTP port to listen on.
 DATA_ROOT|/app/data|The folder where styles.json file will be stored.
-LOG_LEVEL|info|The level of logging. Use 'debug' to increase logging, and 'warn' to ecrease.
+LOG_LEVEL|info|The level of logging. Use 'debug' to increase logging, and 'warn' to decrease.
 SAVE_SECONDS|30|The number of seconds to wait before saving in-memory data to disk.
 
 ### Building / Running Locally
@@ -65,7 +65,7 @@ Retrieve all styles from the service. See [style.ts](./src/style/ts) for more in
   {
     "styleName": "my-style",
     "mode": 1,
-    "descrption": "sample style",
+    "description": "sample style",
     "styles": {
       "fontSize": "72pt",
       ...
@@ -87,7 +87,7 @@ Add a new style or replace an existing style.
 {
   "styleName": "my-style",
   "mode": 1,
-  "descrption": "sample style",
+  "description": "sample style",
   "styles": {
     "fontSize": "72pt",
     ...
@@ -114,9 +114,13 @@ Gets a single style from the service.
 
 ``` json
 {
-  "statusCode": 200,
-  "message": "OK",
-  "location": "/styles/my-style"
+  "styleName": "my-style",
+  "mode": 1,
+  "description": "sample style",
+  "styles": {
+    "fontSize": "72pt",
+    ...
+  }
 }
 ```
 
@@ -179,7 +183,7 @@ Adds multiple styles to the service.  If `replace` is truthy, all styles will be
 ```
 
 ## REST endpoint (deprecated)
-These endpoints still exist for backward compatability, however they will be removed once licit is configured to use them.
+These endpoints still exist for backward compatibility, however they will be removed once licit is configured to use them.
 
 ### `GET /getcustomstyles/`
 
