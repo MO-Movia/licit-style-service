@@ -2,9 +2,9 @@ import express, { Express } from 'express';
 import { tmpdir } from 'os';
 import supertest from 'supertest';
 import { Styles } from './styles';
-import api from './compatability';
+import api from './compatibility';
 
-describe('compatability', () => {
+describe('compatibility', () => {
   const styleName = 'styleName';
   const newName = 'newName';
   const style = { styleName };
@@ -42,7 +42,7 @@ describe('compatability', () => {
   describe('POST /renamecustomstyle/', () => {
     it('should respond with 200', (done) => {
       supertest(app)
-        .post(/renamecustomstyle/)
+        .post('/renamecustomstyle/')
         .set('Content-Type', 'application/json')
         .send({ styleName, newName })
         .expect(200)
@@ -54,7 +54,7 @@ describe('compatability', () => {
     describe('when successful', () => {
       it('should respond with 200', (done) => {
         supertest(app)
-          .post(/removecustomstyle/)
+          .post('/removecustomstyle/')
           .set('Content-Type', 'text/plain')
           .send(styleName)
           .expect(200)
@@ -76,7 +76,7 @@ describe('compatability', () => {
       it('should respond with 200', (done) => {
         supertest(app)
           .post('/bulk-import')
-          .send({ styles: {}, relpace: true })
+          .send({ styles: {}, replace: true })
           .expect(200)
           .end(done);
       });
@@ -85,7 +85,7 @@ describe('compatability', () => {
       it('should respond with 200', (done) => {
         supertest(app)
           .post('/bulk-import')
-          .send({ styles: [], relpace: true })
+          .send({ styles: [], replace: true })
           .expect(200)
           .end(done);
       });

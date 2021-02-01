@@ -10,7 +10,7 @@ import { Style } from './style';
 import { logger } from './logger';
 
 /**
- * Test harnes for Styles
+ * Test harness for Styles
  */
 class TestStyles extends Styles {
   // make public for testing save failures.
@@ -98,7 +98,7 @@ describe('Styles', () => {
 
     describe('if save fails', () => {
       // Testing the underlying behavior o
-      it('should log the faiure', async () => {
+      it('should log the failure', async () => {
         // hack the style into an invalid state
         styles.fileName = null;
 
@@ -167,7 +167,7 @@ describe('Styles', () => {
 
   describe('list', () => {
     it('should return sorted list of styles', () => {
-      // append two styles with distinct sortability
+      // Append two styles with distinct sort characteristics.
       const z = { styleName: 'z' };
       const a = { styleName: 'a' };
       styles.merge([z, a], true);
@@ -184,7 +184,7 @@ describe('Styles', () => {
     describe('when styles is falsy', () => {
       it('should throw an error', () => {
         expect(() => styles.merge(null, true)).to.throw(/styles/i);
-        // Also verify that collection was not cleared prematurely
+        // Also verify that collection was not cleared prematurely.
         expect(styles.list()).to.eql([style]);
       });
     });

@@ -4,7 +4,7 @@ import compression = require('compression');
 import cors from 'cors';
 import api from './api';
 import { Styles } from './styles';
-import compatabiity from './compatability';
+import compatibility from './compatibility';
 import { logger, loggerMiddleware } from './logger';
 
 //  Allow environment to change default behavior
@@ -16,18 +16,17 @@ const port = Number(process.env.HTTP_PORT || 3000);
 export const styles = new Styles(dataRoot);
 // Configure express.
 export const app = express();
-// Add midleware for cors and compression.
+// Add middleware for cors and compression.
 app.use(loggerMiddleware);
 app.use(cors());
 app.options('*', cors());
 app.use(compression());
 // Add styles REST endpoint
 app.use('/styles', api(styles));
-// Add the  compatability endpoint
-app.use(compatabiity(styles));
+// Add the  compatibility endpoint
+app.use(compatibility(styles));
 
-// Createh the HTTP server and configure
-// for a graceful shutdown.
+// Create the HTTP server and configure for a graceful shutdown.
 export const server = http.createServer(app);
 export const stop = async (): Promise<void> => {
   logger.info('Beginning shutdown.');

@@ -14,11 +14,11 @@ describe('api', () => {
   let app: Express;
 
   beforeEach(() => {
-    // Create a style instance with a style to test
+    // Create a style instance with a style to test.
     styles = new Styles(tmpdir());
     styles.set(style);
 
-    // Create a simplified express app
+    // Create a simplified express app.
     app = express();
     app.use('/styles', api(styles));
   });

@@ -2,9 +2,9 @@
  * The interface for a Style in Licit Editor
  */
 export interface Style {
-  //
-  // Currently the only known / required value.
-  //
+  /**
+   * Name of the style. Case insensitive value must be unique.
+   */
   styleName: string;
 
   mode?: number;

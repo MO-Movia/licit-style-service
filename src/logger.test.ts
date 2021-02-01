@@ -4,7 +4,7 @@ import { logger, loggerMiddleware, write } from './logger';
 
 describe('logger', () => {
   it('logger should exist', () => {
-    // Verify that logger was created with methods used in code
+    // Verify that logger was created with methods used in code.
     expect(logger).to.exist;
     expect(loggerMiddleware).to.exist;
     expect(write).to.exist;

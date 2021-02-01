@@ -2,8 +2,8 @@ import { Router } from 'express';
 import type { Styles } from './styles';
 import bodyParser from 'body-parser';
 
-// Maintains compatability with licit 0.0.16 until requested changes are made.
-export default function compatabiity(styles: Styles): Router {
+// Maintains compatibility with licit 0.0.16 until requested changes are made.
+export default function compatibiity(styles: Styles): Router {
   const route = Router();
 
   route.use(bodyParser.json());

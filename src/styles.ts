@@ -140,7 +140,7 @@ export class Styles {
   }
 
   /**
-   *  Convert human readable name into a case insensitve key
+   *  Convert human readable name into a case insensitive key
    * @param styleName
    * @returns transformed value
    * @throws error if styleName is falsy
@@ -230,9 +230,9 @@ export class Styles {
       } catch (err) {
         logger.error(`Failed to write "${this.fileName}".\n${err}`);
       } finally {
-        // While not the best approach, assume that current write wiil never
+        // While not the best approach, assume that current write will never
         // succeed.  Rather than filling the log with error after error, every
-        // 30 seoconds, Only try again if the collection is chagned again.
+        // 30 seconds, Only try again if the collection is changed again.
         this.saved = keys;
       }
     }
