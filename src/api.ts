@@ -1,5 +1,4 @@
-import { Request, Response, Router } from 'express';
-import bodyParser from 'body-parser';
+import { Request, Response, Router, json } from 'express';
 import type { Styles } from './styles';
 import type { Style } from './style';
 
@@ -7,7 +6,7 @@ export default function api(styles: Styles): Router {
   const route = Router();
 
   // Methods below require json body
-  route.use(bodyParser.json());
+  route.use(json());
 
   // POST /styles
   // REQUEST BODY = (Style instance)

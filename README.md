@@ -182,38 +182,13 @@ Adds multiple styles to the service.  If `replace` is truthy, all styles will be
 }
 ```
 
-## REST endpoint (deprecated)
-These endpoints still exist for backward compatibility, however they will be removed once licit is configured to use them.
+### `GET /status`
 
-### `GET /getcustomstyles/`
+Adds simple status check to service.  Returns number of styles.
 
-Gets array of all styles from service.
+#### Response
+```
+200 OK
 
----
-
-### `POST /savecustomstyle/`
-
-Adds a new style to the service
-
----
-
-### `POST /renamecustomstyle/`
-
-Renames an existing style.
-
----
-
-### `POST /removecustomstyle/`
-
-Removes an existing style.
-
----
-
-### `POST /bulk-import/`
-
-Import collection of styles.
-
----
-### `POST /bulk-export/`
-
-Export collection of styles.
+{ size: 999 }
+```

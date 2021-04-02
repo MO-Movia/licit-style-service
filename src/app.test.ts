@@ -1,5 +1,6 @@
 import { expect } from 'chai';
 import { fake, replace } from 'sinon';
+import supertest from 'supertest';
 import { app, server, start, stop, styles } from './app';
 
 describe('app', () => {
@@ -30,6 +31,17 @@ describe('app', () => {
 
       expect(init.called).to.be.true;
       expect(listen.called).to.be.true;
+    });
+  });
+
+  describe('GET /status', () => {
+    it('should respond with 200', (done) => {
+      supertest(app)
+        .get('/status')
+        .send()
+        .expect(200)
+        .expect({size: 0})
+        .end(done);
     });
   });
 });

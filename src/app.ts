@@ -4,7 +4,7 @@ import compression = require('compression');
 import cors from 'cors';
 import api from './api';
 import { Styles } from './styles';
-import compatibility from './compatibility';
+
 import { logger, loggerMiddleware } from './logger';
 
 //  Allow environment to change default behavior
@@ -17,14 +17,14 @@ export const styles = new Styles(dataRoot);
 // Configure express.
 export const app = express();
 // Add middleware for cors and compression.
-app.use(loggerMiddleware);
 app.use(cors());
 app.options('*', cors());
 app.use(compression());
 // Add styles REST endpoint
-app.use('/styles', api(styles));
-// Add the  compatibility endpoint
-app.use(compatibility(styles));
+// Use logger here so logs don't fill up with heartbeat spam
+app.use('/styles', loggerMiddleware, api(styles));
+// Add status REST endpoint
+app.get('/status', (req, res) => res.json({size: styles.size}))
 
 // Create the HTTP server and configure for a graceful shutdown.
 export const server = http.createServer(app);

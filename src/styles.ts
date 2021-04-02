@@ -39,6 +39,13 @@ export class Styles {
   private readonly styles: Map<string, Style>;
 
   /**
+   * Returns number of elements currently available.
+   */
+   get size(): number {
+    return this.styles.size;
+  }
+
+  /**
    * Construct the instance.
    * @param dataRoot Root for saving data
    */
