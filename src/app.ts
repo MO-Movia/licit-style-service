@@ -23,6 +23,8 @@ app.options('*', cors());
 app.use(compression());
 // Add styles REST endpoint
 app.use('/styles', api(styles));
+// Add status REST endpoint
+app.get('/status', (req, res) => res.json({size: styles.size}))
 
 // Create the HTTP server and configure for a graceful shutdown.
 export const server = http.createServer(app);
