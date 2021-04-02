@@ -17,12 +17,12 @@ export const styles = new Styles(dataRoot);
 // Configure express.
 export const app = express();
 // Add middleware for cors and compression.
-app.use(loggerMiddleware);
 app.use(cors());
 app.options('*', cors());
 app.use(compression());
 // Add styles REST endpoint
-app.use('/styles', api(styles));
+// Use logger here so logs don't fill up with heartbeat spam
+app.use('/styles', loggerMiddleware, api(styles));
 // Add status REST endpoint
 app.get('/status', (req, res) => res.json({size: styles.size}))
 
