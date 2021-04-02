@@ -299,4 +299,10 @@ describe('Styles', () => {
       });
     });
   });
+
+  describe('size', () => {
+    it('should return number of elements in map', () => {
+      expect(styles.size).to.equal(1);
+    });
+  });
 });
