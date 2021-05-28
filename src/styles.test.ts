@@ -2,12 +2,12 @@ import { tmpdir } from 'os';
 import { existsSync } from 'fs';
 import { unlink } from 'fs/promises';
 
-import { expect } from 'chai';
-import { SinonSpy, SinonStub, spy, stub } from 'sinon';
-
 import { Styles } from './styles';
 import { Style } from './style';
 import { logger } from './logger';
+
+// Mocking the logger module to suppress console output during testing.
+jest.mock('./logger');
 
 /**
  * Test harness for Styles
@@ -27,6 +27,8 @@ describe('Styles', () => {
   let styles: TestStyles;
   let style: Style;
 
+  beforeEach(() => {});
+
   beforeEach(async () => {
     // Create a new style instance and add a single item
     style = { styleName };
@@ -35,7 +37,7 @@ describe('Styles', () => {
   });
 
   it('should construct', () => {
-    expect(styles).to.exist;
+    expect(styles).toBeTruthy();
   });
 
   describe('clear', () => {
@@ -43,13 +45,13 @@ describe('Styles', () => {
       it('should erase existing styles', () => {
         styles.clear();
 
-        expect(styles.list()).to.eql([]);
+        expect(styles.list()).toEqual([]);
       });
     });
 
     describe('when no styles exist', () => {
       it('should not error', () => {
-        expect(() => new Styles(tmpdir()).clear()).not.to.throw();
+        expect(() => new Styles(tmpdir()).clear()).not.toThrow();
       });
     });
   });
@@ -59,7 +61,7 @@ describe('Styles', () => {
       it('should delete the style', () => {
         const out = styles.delete(styleName);
 
-        expect(out).to.be.true;
+        expect(out).toBeTruthy();
       });
     });
 
@@ -67,32 +69,24 @@ describe('Styles', () => {
       it('should return falsy', () => {
         const out = styles.delete(newName);
 
-        expect(out).to.be.false;
+        expect(out).toBeFalsy();
       });
     });
   });
 
   describe('flush', () => {
-    let error: SinonStub;
-    let save: SinonSpy;
-
     beforeEach(() => {
-      error = stub(logger, 'error');
-      save = spy(styles, 'save');
-    });
-
-    afterEach(() => {
-      error.restore();
-      save.restore();
+      jest.spyOn(logger, 'error');
+      jest.spyOn(styles, 'save');
     });
 
     describe('when save succeeds', () => {
       it('should create the file', async () => {
         await styles.flush();
 
-        expect(save.called).to.be.true;
-        expect(existsSync(styles.fileName)).to.be.true;
-        expect(error.called).to.be.false;
+        expect(styles.save).toHaveBeenCalled();
+        expect(existsSync(styles.fileName)).toBeTruthy();
+        expect(logger.error).not.toHaveBeenCalled();
       });
     });
 
@@ -104,8 +98,8 @@ describe('Styles', () => {
 
         await styles.flush();
 
-        expect(save.called).to.be.true;
-        expect(error.called).to.be.true;
+        expect(styles.save).toHaveBeenCalled();
+        expect(logger.error).toHaveBeenCalled();
       });
     });
   });
@@ -113,19 +107,19 @@ describe('Styles', () => {
   describe('get', () => {
     describe('when called with a falsy value', () => {
       it('should throw an error', () => {
-        expect(() => styles.get(null)).to.throw(/styleName/);
+        expect(() => styles.get(null)).toThrow(/styleName/);
       });
     });
 
     describe('when called with a style that does not exist', () => {
       it('should return undefined', () => {
-        expect(styles.get(newName)).to.be.undefined;
+        expect(styles.get(newName)).toBeUndefined();
       });
     });
 
     describe('when called with a style that exists', () => {
       it('should return that style', () => {
-        expect(styles.get(styleName)).to.equal(style);
+        expect(styles.get(styleName)).toBe(style);
       });
     });
   });
@@ -141,7 +135,7 @@ describe('Styles', () => {
 
         await styles.init(0);
 
-        expect(styles.list()).to.eql([]);
+        expect(styles.list()).toEqual([]);
       });
     });
 
@@ -157,10 +151,10 @@ describe('Styles', () => {
         const after = styles.list();
 
         // Arrays should have same elements in same order.
-        // But not have same instances, since readinf file would
+        // But not have same instances, since reading file would
         // generate new objects.
-        expect(after).to.eql(before);
-        expect(after[0]).to.not.equal(before[1]);
+        expect(after).toEqual(before);
+        expect(after[0]).not.toEqual(before[1]);
       });
     });
   });
@@ -174,7 +168,7 @@ describe('Styles', () => {
 
       const out = styles.list();
 
-      expect(out).to.eql([a, z]);
+      expect(out).toEqual([a, z]);
     });
   });
 
@@ -183,20 +177,20 @@ describe('Styles', () => {
 
     describe('when styles is falsy', () => {
       it('should throw an error', () => {
-        expect(() => styles.merge(null, true)).to.throw(/styles/i);
+        expect(() => styles.merge(null, true)).toThrow(/styles/i);
         // Also verify that collection was not cleared prematurely.
-        expect(styles.list()).to.eql([style]);
+        expect(styles.list()).toEqual([style]);
       });
     });
 
     describe('when styles contains invalid values', () => {
       it('should throw an error', () => {
-        expect(() => styles.merge([null], true)).to.throw(/styles/i);
-        expect(() => styles.merge([{ styleName: null }], false)).to.throw(
+        expect(() => styles.merge([null], true)).toThrow(/styles/i);
+        expect(() => styles.merge([{ styleName: null }], false)).toThrow(
           /invalid/i
         );
         // Also verify that collection was not cleared prematurely
-        expect(styles.list()).to.eql([style]);
+        expect(styles.list()).toEqual([style]);
       });
     });
 
@@ -204,8 +198,7 @@ describe('Styles', () => {
       it('should overwrite existing styles', () => {
         styles.merge([z], true);
 
-        expect(styles.list()).to.eq;
-        [z];
+        expect(styles.list()).toEqual([z]);
       });
     });
 
@@ -213,7 +206,7 @@ describe('Styles', () => {
       it('should retain existing styles', () => {
         styles.merge([z], false);
 
-        expect(styles.list()).to.eql([style, z]);
+        expect(styles.list()).toEqual([style, z]);
       });
     });
   });
@@ -231,40 +224,38 @@ describe('Styles', () => {
 
     describe('when called with invalid oldName', () => {
       it('should throw error', () => {
-        expect(() => styles.rename(null, newName)).to.throw(/oldName/);
+        expect(() => styles.rename(null, newName)).toThrow(/oldName/);
       });
     });
 
     describe('when called with an invalid newName', () => {
       it('should throw error', () => {
-        expect(() => styles.rename(styleName, null)).to.throw(/newName/);
+        expect(() => styles.rename(styleName, null)).toThrow(/newName/);
         // Verify that current name was not changed.
-        expect(style.styleName).to.equal(styleName);
+        expect(style.styleName).toBe(styleName);
       });
     });
 
     describe('when called with same names', () => {
       it('should return undefined', () => {
-        expect(styles.rename(styleName, styleName)).to.be.undefined;
+        expect(styles.rename(styleName, styleName)).toBeUndefined();
       });
     });
 
     describe('when called with an oldStyle that does not exist', () => {
       it('should throw error', () => {
-        expect(() => styles.rename(newName, 'otherName')).to.throw(
-          /not found/i
-        );
+        expect(() => styles.rename(newName, 'otherName')).toThrow(/not found/i);
       });
     });
 
     describe('when called with a newStyle that exists', () => {
       it('should throw error', () => {
         styles.set({ styleName: newName });
-        expect(() => styles.rename(styleName, newName)).to.throw(
+        expect(() => styles.rename(styleName, newName)).toThrow(
           /already exists/i
         );
         // verify that name was not changed
-        expect(style.styleName).to.equal(styleName);
+        expect(style.styleName).toBe(styleName);
       });
     });
 
@@ -272,10 +263,10 @@ describe('Styles', () => {
       it('should rename the style', () => {
         const out = styles.rename(styleName, newName);
 
-        expect(out).to.exist;
-        expect(style.styleName).to.equal(newName);
+        expect(out).toBeTruthy();
+        expect(style.styleName).toBe(newName);
         // Verify that style cannot be retrieved using the old name.
-        expect(styles.get(styleName)).to.be.undefined;
+        expect(styles.get(styleName)).toBeUndefined();
       });
     });
   });
@@ -283,26 +274,26 @@ describe('Styles', () => {
   describe('set', () => {
     describe('when called with a falsy value', () => {
       it('should throw an error', () => {
-        expect(() => styles.set(null)).to.throw(/style/i);
+        expect(() => styles.set(null)).toThrow(/style/i);
       });
     });
 
     describe('when called with an invalid style', () => {
       it('should throw an error', () => {
-        expect(() => styles.set({ styleName: null })).to.throw(/styleName/i);
+        expect(() => styles.set({ styleName: null })).toThrow(/styleName/i);
       });
     });
 
     describe('when called with a valid style', () => {
       it('should store the style', () => {
-        expect(styles.get(styleName)).to.equal(style);
+        expect(styles.get(styleName)).toBe(style);
       });
     });
   });
 
   describe('size', () => {
     it('should return number of elements in map', () => {
-      expect(styles.size).to.equal(1);
+      expect(styles.size).toBe(1);
     });
   });
 });

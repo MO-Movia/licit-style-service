@@ -3,14 +3,24 @@
     "target": "es6",
     "module": "commonjs",
     "moduleResolution": "node",
-    "lib": ["es2017"],
+    "lib": [
+      "es2017"
+    ],
     "outDir": "lib",
     "pretty": false,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "types": [
+      "jest"
+    ]
   },
   "typeAcquisition": {
     "enable": true
   },
-  "include": ["src/**/*.ts"],
-  "exclude": ["node_modules", "**/*.test.ts"]
+  "include": [
+    "src/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/*.test.ts"
+  ],
 }
