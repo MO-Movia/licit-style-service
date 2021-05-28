@@ -1,47 +1,42 @@
-import { expect } from 'chai';
-import { fake, replace } from 'sinon';
 import supertest from 'supertest';
 import { app, server, start, stop, styles } from './app';
 
+// Mocking the logger module to suppress console output during testing.
+jest.mock('./logger');
+
 describe('app', () => {
   it('should exist', () => {
-    expect(app).to.exist;
+    expect(app).toBeTruthy();
   });
 
   describe('shutdown', () => {
     it('should close the server', async () => {
       // Execute the callback as well.
-      const faked = fake((fn) => fn());
-      replace(server, 'close', faked);
+      jest.spyOn(server, 'close');
 
       await stop();
 
-      expect(faked.called).to.be.true;
+      expect(server.close).toHaveBeenCalled();
     });
   });
 
   describe('start', () => {
     it('should start the listener', async () => {
-      const listen = fake((port, fn) => fn());
-      replace(server, 'listen', listen);
-      const init = fake.resolves(void 0);
-      replace(styles, 'init', init);
+      jest.spyOn(styles, 'init').mockImplementation(async () => {});
+      jest.spyOn(server, 'listen').mockImplementation((port, fn) => {
+        fn();
+        return this;
+      });
 
       await start();
 
-      expect(init.called).to.be.true;
-      expect(listen.called).to.be.true;
+      expect(styles.init).toHaveBeenCalled();
+      expect(server.listen).toHaveBeenCalled();
     });
   });
 
   describe('GET /status', () => {
-    it('should respond with 200', (done) => {
-      supertest(app)
-        .get('/status')
-        .send()
-        .expect(200)
-        .expect({size: 0})
-        .end(done);
-    });
+    it('should respond with 200', () =>
+      supertest(app).get('/status').send().expect(200).expect({ size: 0 }));
   });
 });

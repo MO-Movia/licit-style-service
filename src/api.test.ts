@@ -1,9 +1,11 @@
-import { expect } from 'chai';
 import express, { Express } from 'express';
 import { tmpdir } from 'os';
 import supertest from 'supertest';
 import api from './api';
 import { Styles } from './styles';
+
+// Mocking the logger to suppress console output during testing.
+jest.mock('./logger');
 
 describe('api', () => {
   const styleName = 'styleName';
@@ -64,34 +66,29 @@ describe('api', () => {
     });
 
     describe('when style does not exist', () => {
-      it('should respond with 404', (done) => {
+      it('should respond with 404', () =>
         supertest(app)
           .get(`/styles/${newName}`)
           .expect(404)
           .expect('Content-Type', /json/)
-          .expect({ statusCode: 404, message: 'Not Found' })
-          .end(done);
-      });
+          .expect({ statusCode: 404, message: 'Not Found' }));
     });
   });
 
   describe('DELETE /styles/styleName', () => {
     describe('when style exists', () => {
-      it('should respond with 204', (done) => {
+      it('should respond with 204', () =>
         supertest(app)
           .delete(`/styles/${styleName}`)
           .expect(204)
           .expect(() => {
-            expect(styles.get(styleName)).to.be.undefined;
-          })
-          .end(done);
-      });
+            expect(styles.get(styleName)).toBeUndefined();
+          }));
     });
 
     describe('when style does not exist', () => {
-      it('should respond with 204', (done) => {
-        supertest(app).delete(`/styles/${newName}`).expect(204).end(done);
-      });
+      it('should respond with 204', () =>
+        supertest(app).delete(`/styles/${newName}`).expect(204));
     });
   });
 
@@ -104,8 +101,8 @@ describe('api', () => {
           .send({ oldName: styleName, newName })
           .expect(204)
           .expect(() => {
-            expect(style.styleName).to.equal(newName);
-            expect(styles.get(newName)).to.equal(style);
+            expect(style.styleName).toEqual(newName);
+            expect(styles.get(newName)).toEqual(style);
           })
           .end(done);
       });
@@ -133,7 +130,7 @@ describe('api', () => {
         .patch('/styles/clear')
         .expect(204)
         .expect(() => {
-          expect(styles.get(styleName)).to.be.undefined;
+          expect(styles.get(styleName)).toBeUndefined();
         })
         .end(done);
     });
