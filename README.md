@@ -2,8 +2,8 @@
 ![Last commit](https://img.shields.io/github/last-commit/MO-Movia/licit-style-service)
 ![Build Status](https://github.com/MO-Movia/licit-style-service/workflows/build/badge.svg?branch=main)
 [![Coverage](https://codecov.io/gh/MO-Movia/licit-style-service/branch/main/graph/badge.svg?token=40H9P8IZRC)](https://codecov.io/gh/MO-Movia/licit-style-service)
-![Dependencies](https://david-dm.org/MO-Movia/licit-style-service.svg)
-![Dev Dependencies](https://david-dm.org/MO-Movia/licit-style-service/dev-status.svg)
+# ![Dependencies](https://david-dm.org/MO-Movia/licit-style-service.svg)
+# ![Dev Dependencies](https://david-dm.org/MO-Movia/licit-style-service/dev-status.svg)
 [![License](https://shields.io/github/license/MO-Movia/licit-style-service)](./LICENSE)
 
 
