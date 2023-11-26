@@ -24,7 +24,7 @@ describe('app', () => {
     it('should start the listener', async () => {
       jest.spyOn(styles, 'init').mockImplementation(async () => {});
       jest.spyOn(server, 'listen').mockImplementation((port, fn) => {
-        fn();
+        fn?.();
         return this;
       });
 

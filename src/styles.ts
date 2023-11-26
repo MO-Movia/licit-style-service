@@ -41,7 +41,7 @@ export class Styles {
   /**
    * Returns number of elements currently available.
    */
-   get size(): number {
+  get size(): number {
     return this.styles.size;
   }
 

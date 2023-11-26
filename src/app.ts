@@ -24,19 +24,17 @@ app.use(compression());
 // Use logger here so logs don't fill up with heartbeat spam
 app.use('/styles', loggerMiddleware, api(styles));
 // Add status REST endpoint
-app.get('/status', (req, res) => res.json({size: styles.size}))
+app.get('/status', (req, res) => res.json({ size: styles.size }));
 
 // Create the HTTP server and configure for a graceful shutdown.
 export const server = http.createServer(app);
 export const stop = async (): Promise<void> => {
   logger.info('Beginning shutdown.');
-  server.close(
-    async (): Promise<void> => {
-      // Make sure any lingering changes are saved to disk.
-      await styles.flush();
-      logger.info('Shutdown complete.');
-    }
-  );
+  server.close(async (): Promise<void> => {
+    // Make sure any lingering changes are saved to disk.
+    await styles.flush();
+    logger.info('Shutdown complete.');
+  });
 };
 
 /**

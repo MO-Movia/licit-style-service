@@ -103,7 +103,7 @@ export default function api(styles: Styles): Router {
       const { oldName, newName } = req.body;
       styles.rename(oldName, newName);
       return res.sendStatus(204);
-    }
+    },
   );
 
   // PATCH /styles/import
@@ -128,7 +128,7 @@ export default function api(styles: Styles): Router {
     (req: Request<{ styles: Style[]; replace?: boolean }>, res: Response) => {
       styles.merge(req.body.styles, req.body.replace);
       return res.sendStatus(204);
-    }
+    },
   );
 
   // PATCH /styles/clear
