@@ -1,6 +1,6 @@
 {
   "name": "@modusoperandi/licit-style-service",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "reference REST endpoint for providing styles to licit editor",
   "main": "lib/app.js",
   "scripts": {
