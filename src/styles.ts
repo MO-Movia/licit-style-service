@@ -1,5 +1,5 @@
-import { resolve, join } from 'path';
-import { readFile, writeFile } from 'fs/promises';
+import { resolve, join } from 'node:path';
+import { readFile, writeFile } from 'node:fs/promises';
 import type { Style } from './style';
 import { logger } from './logger';
 

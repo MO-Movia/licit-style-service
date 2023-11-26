@@ -1,6 +1,6 @@
-import { tmpdir } from 'os';
-import { existsSync } from 'fs';
-import { unlink } from 'fs/promises';
+import { tmpdir } from 'node:os';
+import { existsSync } from 'node:fs';
+import { unlink } from 'node:fs/promises';
 
 import { Styles } from './styles';
 import { Style } from './style';

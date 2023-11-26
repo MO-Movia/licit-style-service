@@ -12,7 +12,7 @@ import { Styles } from './styles';
 const port = Number(process.env.HTTP_PORT || 3000);
 const dataRoot = process.env.DATA_ROOT || '/app/data';
 const saveSeconds = Number(process.env.SAVE_SECONDS || 30);
-const maxRequests = Number(process.env.MAX_REQUESTS_PER_MINUTE || 60)
+const maxRequests = Number(process.env.MAX_REQUESTS_PER_MINUTE || 60);
 
 // Build the styles instance.
 export const styles = new Styles(dataRoot);
