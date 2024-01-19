@@ -1,6 +1,6 @@
-import { tmpdir } from 'os';
-import { existsSync } from 'fs';
-import { unlink } from 'fs/promises';
+import { tmpdir } from 'node:os';
+import { existsSync } from 'node:fs';
+import { unlink } from 'node:fs/promises';
 
 import { Styles } from './styles';
 import { Style } from './style';
@@ -187,7 +187,7 @@ describe('Styles', () => {
       it('should throw an error', () => {
         expect(() => styles.merge([null], true)).toThrow(/styles/i);
         expect(() => styles.merge([{ styleName: null }], false)).toThrow(
-          /invalid/i
+          /invalid/i,
         );
         // Also verify that collection was not cleared prematurely
         expect(styles.list()).toEqual([style]);
@@ -252,7 +252,7 @@ describe('Styles', () => {
       it('should throw error', () => {
         styles.set({ styleName: newName });
         expect(() => styles.rename(styleName, newName)).toThrow(
-          /already exists/i
+          /already exists/i,
         );
         // verify that name was not changed
         expect(style.styleName).toBe(styleName);

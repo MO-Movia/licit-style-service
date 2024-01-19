@@ -1,5 +1,5 @@
-import { resolve, join } from 'path';
-import { readFile, writeFile } from 'fs/promises';
+import { resolve, join } from 'node:path';
+import { readFile, writeFile } from 'node:fs/promises';
 import type { Style } from './style';
 import { logger } from './logger';
 
@@ -41,7 +41,7 @@ export class Styles {
   /**
    * Returns number of elements currently available.
    */
-   get size(): number {
+  get size(): number {
     return this.styles.size;
   }
 

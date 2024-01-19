@@ -1,5 +1,5 @@
 import express, { Express } from 'express';
-import { tmpdir } from 'os';
+import { tmpdir } from 'node:os';
 import supertest from 'supertest';
 import api from './api';
 import { Styles } from './styles';
